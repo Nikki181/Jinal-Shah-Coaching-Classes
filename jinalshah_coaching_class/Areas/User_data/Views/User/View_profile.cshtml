@@ -1,0 +1,120 @@
+﻿@model jinalshah_coaching_class.Areas.User_data.Models.user
+@{
+    ViewBag.Title = "View_profile";
+    Layout = "~/Areas/User_data/Views/Shared/_master1.cshtml";
+}
+
+ <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Font Awesome -->
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	
+	<!-- Endless -->
+	@*<link href="css/endless.min.css" rel="stylesheet">*@
+
+ <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <!-- Jquery -->
+	<script src="js/jquery-1.10.2.min.js"></script>
+    
+    <!-- Bootstrap -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+   
+	<!-- Modernizr -->
+	<script src='js/modernizr.min.js'></script>
+   
+    <!-- Pace -->
+	<script src='js/pace.min.js'></script>
+   
+    <!-- Popup Overlay -->
+	<script src='js/jquery.popupoverlay.min.js'></script>
+   
+    <!-- Slimscroll -->
+	<script src='js/jquery.slimscroll.min.js'></script>
+   
+	<!-- Cookie -->
+	<script src='js/jquery.cookie.min.js'></script>
+
+	<!-- Endless -->
+	@*<script src="js/endless/endless.js"></script>*@
+
+@using (Html.BeginForm("edit_profile", "User", FormMethod.Post))
+{
+
+
+<div class="login-wrapper">
+		
+		<div class="login-widget animation-delay1">	
+			<div class="panel panel-default">
+				<div class="panel-heading clearfix">
+					<div class="pull-left">
+						 User Profile
+					</div>
+
+				</div>
+				<div class="panel-body">
+					<form class="form-login">
+                   @*     <div class="table-responsive">
+                       <table class="table" style="width:95%">
+                            <tr>
+                                <td>
+                   *@
+                        <div>
+                           <img class="img-res-new"  height="225" width="200" src="~/Images/images11.jpg"/>
+                                 @*<img class="img-res-new" src="@Url.Content(@Model.photo)"/>*@
+                         </div>
+                        <br />
+                                         <div class="form-group">
+						                	<label>First name :</label>&nbsp;
+						                	<span>Amita</span>&nbsp;&nbsp;
+						            </div>
+                                    <div class="form-group">
+                                        <label>Last name :</label>&nbsp;
+                                        <span>Trivedi</span>
+                                    </div>
+                       
+                        <div class="form-group" >
+							<label>Email-Id:</label>&nbsp;
+							<span>amitatrivedi12@gmail.com</span>
+                        </div>
+                          
+                         <div class="form-group" >
+							<label>Address  :</label>&nbsp;
+							<span>Paldi</span>
+						</div>
+                        <div class="form-group" >
+							<label>Gender :</label>&nbsp;
+							<span>Female</span>
+						</div>
+                       <div class="form-group" >
+							<label>Dgree :</label>&nbsp;
+							<span>BE</span>
+						</div>
+
+                        <div class="form-group" >
+							<label>Semester :</label>&nbsp;
+							<span>5th semester</span>
+						</div>
+
+                         
+						
+                         
+                        <div class="controls text-right">
+                                      <h3>
+                                        <button type="submit" class="btn btn-theme">Edit Profile</button>
+                                        </h3>
+                        <span style="color:red">@ViewBag.update</span>
+                        
+                        </div>
+                        
+                            
+					</form>
+				</div>
+			</div><!-- /panel -->
+		</div><!-- /login-widget -->
+	</div><!-- /login-wrapper -->
+
+}

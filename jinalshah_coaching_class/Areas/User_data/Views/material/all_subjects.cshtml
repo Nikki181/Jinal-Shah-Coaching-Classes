@@ -1,0 +1,49 @@
+﻿@model jinalshah_coaching_class.Areas.User_data.Models.material
+
+@{
+    ViewBag.Title = "all_subjects";
+    Layout = "~/Areas/User_data/Views/Shared/_master1.cshtml";
+}
+
+
+<header class="page-heading clearfix">
+      <h1 class="heading-title pull-left">All Subjects</h1>
+</header>  
+
+ <div class="form-group">
+								<label for="name">Subject</label>
+						        <select name="sem" class="form-control input-sm" >
+										<option>C++</option>
+                                        <option>C</option>
+										
+                                    </select>
+							  </div><!-- /form-group -->
+							
+                          
+                              <div class="form-group">
+								<label for="name">Exam Level</label>
+						       <select name="sem" class="form-control input-sm" >
+										<option>Easy</option>
+                                        <option>Medium</option>
+										<option>Tough</option>
+										
+                             </select>
+							  </div>
+
+                                             <div class="form-group">
+								<label for="name">Exam Marks</label>
+						        <input type="text" id="txtsub" name="news_title" required class="form-control input-sm" value="50">
+							  </div>
+
+ <div class="form-group">
+								<label for="name">Exam Duration</label>
+						        <input type="text" id="txtsub" name="news_title" required class="form-control input-sm" value="30 mins" >
+							  </div>
+
+  <hr />
+                                  <div class="controls text-center">
+                                       <h3><i class="fa fa-upload " style="color:#6091ba">
+                                         <input type="submit" value="Start Exam" class="btn btn-theme"  name="submit" />
+                                        </i></h3>
+                                </div>
+                                            </div>

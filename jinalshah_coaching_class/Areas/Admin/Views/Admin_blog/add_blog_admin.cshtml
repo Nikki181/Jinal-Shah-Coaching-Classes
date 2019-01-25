@@ -1,0 +1,196 @@
+﻿@{
+    ViewBag.Title = "add_news_admin";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+@section Scripts{
+
+
+     @Scripts.Render("bundles/jquery")
+    @Scripts.Render("bundles/jqueryval")
+}
+
+
+<link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="~/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Pace -->
+<link href="~/css/pace.css" rel="stylesheet">
+
+<!-- Chosen -->
+<link href="~/css/chosen/chosen.min.css" rel="stylesheet" />
+
+<!-- Datepicker -->
+<link href="~/css/datepicker.css" rel="stylesheet" />
+
+<!-- Timepicker -->
+<link href="~/css/bootstrap-timepicker.css" rel="stylesheet" />
+
+<!-- Slider -->
+<link href="~/css/slider.css" rel="stylesheet" />
+
+<!-- Tag input -->
+<link href="~/css/jquery.tagsinput.css" rel="stylesheet" />
+
+<!-- WYSIHTML5 -->
+<link href="~/css/bootstrap-wysihtml5.css" rel="stylesheet" />
+
+<!-- Dropzone -->
+<link href='~/css/dropzone/dropzone.css' rel="stylesheet" />
+
+<!-- Endless -->
+@*<link href="~/css/endless.min.css" rel="stylesheet">*@
+<link href="~/css/endless-skin.css" rel="stylesheet">
+<!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<!-- Jquery -->
+<script src="~/js/jquery-1.10.2.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Chosen -->
+<script src='~/js/chosen.jquery.min.js'></script>
+
+<!-- Mask-input -->
+<script src='~/js/jquery.maskedinput.min.js'></script>
+
+<!-- Datepicker -->
+<script src='~/js/bootstrap-datepicker.min.js'></script>
+
+<!-- Timepicker -->
+<script src='~/js/bootstrap-timepicker.min.js'></script>
+
+<!-- Slider -->
+<script src='~/js/bootstrap-slider.min.js'></script>
+
+<!-- Tag input -->
+<script src='~/js/jquery.tagsinput.min.js'></script>
+
+<!-- WYSIHTML5 -->
+<script src='~/js/wysihtml5-0.3.0.min.js'></script>
+<script src='~/js/uncompressed/bootstrap-wysihtml5.js'></script>
+
+<!-- Dropzone -->
+<script src='~/js/dropzone.min.js'></script>
+
+<!-- Modernizr -->
+<script src='~/js/modernizr.min.js'></script>
+
+<!-- Pace -->
+<script src='~/js/pace.min.js'></script>
+
+<!-- Popup Overlay -->
+<script src='~/js/jquery.popupoverlay.min.js'></script>
+
+<!-- Slimscroll -->
+<script src='~/js/jquery.slimscroll.min.js'></script>
+
+<!-- Cookie -->
+<script src='~/js/jquery.cookie.min.js'></script>
+
+<!-- Endless -->
+<script src="~/js/endless/endless_form.js"></script>
+@using (Html.BeginForm("add_news1", "Admin_news", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    
+      <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title"><i>Add Questions/Generate Exam</i></h4>
+                                        </div>
+                                        <div class="panel-body">
+                              <div class="form-group">
+								<label for="name">Subject</label>
+						        <select name="sem" class="form-control input-sm" >
+										<option>C++</option>
+                                        <option>C</option>
+										
+                                    </select>
+							  </div><!-- /form-group -->
+							
+                            <div class="form-group">
+							<label for="sem">Semester</label>
+                             <select name="sem" class="form-control input-sm" >
+										<option>1st semester</option>
+                                        <option>2</option>
+										<option>3</option>
+										<option>4</option>
+                                        <option>5</option>
+                                 	    <option>6</option>
+                                        <option>7</option>
+										<option>8</option>
+										<option>9</option>
+                                        <option>10</option>
+                                     
+                             </select>
+							
+				    		</div>
+                              <div class="form-group">
+								<label for="name">Exam Level</label>
+						       <select name="sem" class="form-control input-sm" >
+										<option>Easy</option>
+                                        <option>Medium</option>
+										<option>Tough</option>
+										
+                             </select>
+							  </div>
+
+                                             <div class="form-group">
+								<label for="name">Exam Marks</label>
+						        <input type="text" id="txtsub" name="news_title" required class="form-control input-sm" >
+							  </div>
+
+                                            <div class="form-group">
+								<label for="name">Exam Duration</label>
+						        <input type="text" id="txtsub" name="news_title" required class="form-control input-sm" >
+							  </div>
+                                 <div class="form-group">
+                                    <label for="name">Question</label>
+                                    <textarea id="que_desc" name="news_desc" required placeholder="Post question" class="form-control input-sm" rows="10"></textarea>
+                                </div><!--//form-group-->
+                                
+
+                                            <div class="form-group">
+                                    <label for="name">Option1</label>
+                                     <input type="text" id="txtsub" name="news_title" required class="form-control input-sm" >
+                                </div>
+
+                                            <div class="form-group">
+                                    <label for="name">Option2</label>
+                                     <input type="text" id="txtsub" name="news_title" required class="form-control input-sm" >
+                                </div>
+
+                                            <div class="form-group">
+                                    <label for="name">Option3</label>
+                                     <input type="text" id="txtsub" name="news_title" required class="form-control input-sm" >
+                                </div>
+
+                                            <div class="form-group">
+                                    <label for="name">Option4</label>
+                                     <input type="text" id="txtsub" name="news_title" required class="form-control input-sm" >
+                                </div>
+
+                                            <div class="form-group">
+                                    <label for="name">Correct Answer</label>
+                                    <input type="text" id="txtsub" name="news_title" required class="form-control input-sm" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Image</label>
+                                   <input  type="file" name="fileuploadDemo"  id="fileupld" class="form-control input-sm" />
+                                </div><!--//form-group-->
+     
+                               <hr />
+                                  <div class="controls text-center">
+                                       <h3><i class="fa fa-upload " style="color:#6091ba">
+                                         <input type="submit" value="Post Question" class="btn btn-theme"  name="submit" />
+                                        </i></h3>
+                                </div>
+                                            </div>
+          </div>
+    
+}

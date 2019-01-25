@@ -1,0 +1,43 @@
+﻿@model PagedList.IPagedList<jinalshah_coaching_class.Areas.User_data.Models.events>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "event_list";
+    Layout = "~/Areas/User_data/Views/Shared/_master1.cshtml";
+}
+
+<header class="page-heading clearfix">
+                   
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img class="img-responsive" src="~/Images/final1.png" />    
+         </header>  
+
+<div>
+
+
+    <form name="form1" id="form1">
+                            <span style="color:red">@ViewBag.msg </span>
+                             
+                               @* <div class="form-group">
+                                    <label for="name">Subject</label>  C++
+                                   <label for="name">Elapsed Time</label>  29 mins
+                                    <label for="name">Total Time</label>  30 mins
+                                </div>*@
+                              
+								@*<li><a href="#" data-filter=".photography">aneri</a></li>*@
+						
+                                    <h3 class="title">Question1:   How do we check if the file has reached its end ?</h3>
+                                    
+							         <input name="txtgen"  type="radio" >Use if_file_end()
+                                     <br /><br /><input name="txtgen"  type="radio">use end_of_file()  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   <br /><br /> <input name="txtgen"  type="radio">use eof()
+                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                   <br /> <br /><input name="txtgen"  type="radio">both a and c
+                                    <br /><br />
+                                   
+                                   
+                                </form>    
+                                    @*<p class="desc"></p>*@                       
+                                </div><!--//details-->
+                           
+        <input type="submit" value="Next" class="btn btn-primary" />                             
+   

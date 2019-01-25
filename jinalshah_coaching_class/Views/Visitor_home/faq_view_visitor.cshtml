@@ -1,0 +1,207 @@
+﻿@model PagedList.IPagedList<jinalshah_coaching_class.Models.faq_visitor>
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "faq_view_visitor";
+    Layout = "~/Views/Shared/_master1_visitor.cshtml";
+}
+
+
+<link rel="shortcut icon" href="favicon.ico">  
+    <link href='~/http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>     
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="~/assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="~/assets/plugins/flexslider/flexslider.css">
+    <link rel="stylesheet" href="~/assets/plugins/pretty-photo/css/prettyPhoto.css">    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="~/assets/css/styles.css">
+<script type="text/javascript" src="~/assets/plugins/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="~/assets/plugins/bootstrap-hover-dropdown.min.js"></script> 
+    <script type="text/javascript" src="~/assets/plugins/back-to-top.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/pretty-photo/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jflickrfeed/jflickrfeed.min.js"></script> 
+    <script type="text/javascript" src="~/assets/js/main.js"></script>              
+
+
+
+<header class="page-heading clearfix">
+                    <h1 class="heading-title pull-left">Frequently Asked Questions</h1>
+                   
+         </header>       
+                         
+                                          @*                       
+                                              <div class="panel-group" id="accordion">
+            @foreach(var item in Model){
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse-1">
+                                            @item.que
+                                            </a>
+                                        </h4>
+                                    </div><!--//pane-heading-->
+                                    <div id="collapse-1" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                        @item.ans
+                                        </div><!--//panel-body-->
+                                    </div><!--//panel-colapse-->
+                                </div><!--//panel-->
+             }
+
+                        </div>*@
+                               
+                               
+          @*  <div class="panel-group" id="accordion">
+                @foreach(var item in Model ){
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse-1">
+                                            @item.que
+                                            </a>
+                                        </h4>
+                                    </div><!--//pane-heading-->
+                                    <div id="collapse-1" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                       @item.ans
+                                        </div><!--//panel-body-->
+                                    </div><!--//panel-colapse-->
+                                </div><!--//panel-->
+                }
+                            </div><!--//panel-group-->              *@
+<div class="faq-wrapper col-md-8 col-sm-7" style="width:100%">                         
+                            <div class="panel-group" id="accordion">
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" class="collapsed" href="#collapse-2">
+                                           Which are cources provided?
+                                            </a>
+                                        </h4>
+                                    </div><!--//pane-heading-->
+                                    <div id="collapse-2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                        We provide cources Windows Phone 8,Windows Metro Application,HTML5,CSS 3,JQuery,MVC,ASP.NET,PHP,JAVA,IPhone,Android.
+                                        </div><!--//panel-body-->
+                                    </div><!--//panel-colapse-->
+                                </div><!--//panel-->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" class="collapsed" href="#collapse-3">
+                                           Does your institude provides any extra seminars or workshops?
+                                            </a>
+                                        </h4>
+                                    </div><!--//pane-heading-->
+                                    <div id="collapse-3" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                       Yes,all upcoming events details are  provide on home page of our webiste.
+                                        </div><!--//panel-body-->
+                                    </div><!--//panel-colapse-->
+                                </div><!--//panel-->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" class="collapsed" href="#collapse-4">
+                                           How should I get materials? 
+                                            </a>
+                                        </h4>
+                                    </div><!--//pane-heading-->
+                                    <div id="collapse-4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                      For that you have to login first and then you can download it..
+                                        </div><!--//panel-body-->
+                                    </div><!--//panel-colapse-->
+                                </div><!--//panel-->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" class="collapsed" href="#collapse-5">
+                                            How can I registered here? 
+                                            </a>
+                                        </h4>
+                                    </div><!--//pane-heading-->
+                                    <div id="collapse-5" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                     Click on “Login" from menu then click on "sign up" link and enter all the detail being asked for.and your request will be sent to admin for approval.
+                                        </div><!--//panel-body-->
+                                    </div><!--//panel-colapse-->
+                                </div><!--//panel-->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" class="collapsed" href="#collapse-6">
+                                          Can user edit/update details entered in the application submitted online?
+                                            </a>
+                                        </h4>
+                                    </div><!--//pane-heading-->
+                                    <div id="collapse-6" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                               Yes, you can edit it from "edit profile" option from menu and save it.
+                                        </div><!--//panel-body-->
+                                    </div><!--//panel-colapse-->
+                                </div><!--//panel-->
+                               @* <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" class="collapsed" href="#collapse-7">
+                                
+                                            </a>
+                                        </h4>
+                                    </div><!--//pane-heading-->
+                                    <div id="collapse-7" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                        Mauris eu faucibus sem, ac pharetra justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur blandit euismod ipsum, ac commodo eros tincidunt et. Aenean tincidunt vestibulum adipiscing. Ut eu enim velit. Ut lectus leo, interdum sodales nibh nec, dictum pulvinar nisl. In consequat fringilla turpis id porta. Cras eget lacus ac orci facilisis aliquam. Fusce a lobortis purus. Integer sed odio et ipsum interdum volutpat at nec nisl. Sed pulvinar ante orci, id tristique sapien cursus et. Nullam ut augue et magna ornare aliquam ut vulputate dui. Vivamus fringilla eu ipsum ut mattis. Nulla a varius velit. Phasellus at lectus ut felis posuere lacinia in id purus.
+                                        </div><!--//panel-body-->
+                                    </div><!--//panel-colapse-->
+                                </div><!--//panel-->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" class="collapsed" href="#collapse-8">
+                                            Aenean tempus pulvinar tempor?
+                                            </a>
+                                        </h4>
+                                    </div><!--//pane-heading-->
+                                    <div id="collapse-8" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                        Mauris eu faucibus sem, ac pharetra justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur blandit euismod ipsum, ac commodo eros tincidunt et. Aenean tincidunt vestibulum adipiscing. Ut eu enim velit. Ut lectus leo, interdum sodales nibh nec, dictum pulvinar nisl. In consequat fringilla turpis id porta. Cras eget lacus ac orci facilisis aliquam. Fusce a lobortis purus. Integer sed odio et ipsum interdum volutpat at nec nisl. Sed pulvinar ante orci, id tristique sapien cursus et. Nullam ut augue et magna ornare aliquam ut vulputate dui. Vivamus fringilla eu ipsum ut mattis. Nulla a varius velit. Phasellus at lectus ut felis posuere lacinia in id purus.
+                                        </div><!--//panel-body-->
+                                    </div><!--//panel-colapse-->
+                                </div><!--//panel-->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" class="collapsed" href="#collapse-9">
+                                            Quisque quam odio mattis in sem id?
+                                            </a>
+                                        </h4>
+                                    </div><!--//pane-heading-->
+                                    <div id="collapse-9" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                        Mauris eu faucibus sem, ac pharetra justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur blandit euismod ipsum, ac commodo eros tincidunt et. Aenean tincidunt vestibulum adipiscing. Ut eu enim velit. Ut lectus leo, interdum sodales nibh nec, dictum pulvinar nisl. In consequat fringilla turpis id porta. Cras eget lacus ac orci facilisis aliquam. Fusce a lobortis purus. Integer sed odio et ipsum interdum volutpat at nec nisl. Sed pulvinar ante orci, id tristique sapien cursus et. Nullam ut augue et magna ornare aliquam ut vulputate dui. Vivamus fringilla eu ipsum ut mattis. Nulla a varius velit. Phasellus at lectus ut felis posuere lacinia in id purus.
+                                        </div><!--//panel-body-->
+                                    </div><!--//panel-colapse-->
+                                </div>*@<!--//panel-->
+                            </div><!--//panel-group-->                                                
+                        </div><!--//faq-wrapper-->
+
+<div>
+                     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                     @Html.PagedListPager(Model, Page_No => Url.Action("faq_view_visitor",
+                    new { Page_No }))
+
+</div>
+
+
+ 
+              
+ 

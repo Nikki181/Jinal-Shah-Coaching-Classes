@@ -1,0 +1,232 @@
+﻿@model IEnumerable<jinalshah_coaching_class.Areas.Admin.Models.testimonial_admin>
+
+@{
+    ViewBag.Title = "testi_view_admin";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+
+@*@section Scripts{*@
+<link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome-->
+<link href="~/css/font-awesome.min.css" rel="stylesheet">
+<!-- Pace -->
+@*<link href="css/pace.css" rel="stylesheet">*@
+
+<!-- Datatable -->
+<link href="~/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+<link href="~/css/font-awesome.min.css" rel="stylesheet" />
+<!-- Endless -->
+@*<link href="css/endless.min.css" rel="stylesheet">*@
+<link href="~/css/endless-skin.css" rel="stylesheet">
+<script src="~/js/jquery-1.10.2.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Datatable -->
+<script src='~/js/jquery.dataTables.min.js'></script>
+
+<!-- Modernizr -->
+<script src='~/js/modernizr.min.js'></script>
+
+<!-- Pace -->
+@*<script src='js/pace.min.js'></script>*@
+
+<!-- Popup Overlay -->
+<script src='~/js/jquery.popupoverlay.min.js'></script>
+
+<!-- Slimscroll -->
+<script src='~/js/jquery.slimscroll.min.js'></script>
+
+<!-- Cookie -->
+<script src='~/js/jquery.cookie.min.js'></script>
+<!-- Endless -->
+<script src="~/js/endless/endless.js"></script>
+
+<script>
+    $(function () {
+        $('#dataTable').dataTable({
+            "bJQueryUI": true,
+            "sPaginationType": "full_numbers"
+        });
+
+        $('#chk-all').click(function () {
+            if ($(this).is(':checked')) {
+                $('#responsiveTable').find('.chk-row').each(function () {
+                    $(this).prop('checked', true);
+                    $(this).parent().parent().parent().addClass('selected');
+                });
+            }
+            else {
+                $('#responsiveTable').find('.chk-row').each(function () {
+                    $(this).prop('checked', false);
+                    $(this).parent().parent().parent().removeClass('selected');
+                });
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    //Select/Deselect all checkboxs in the grid
+
+    $("#allBox").click(function () {
+        if ($("#allBox").is(":checked") == true) {
+            $(".box").attr("checked", $(this).attr("checked") ? true : true);
+        }
+        else {
+            $(".box").attr("checked", $(this).attr("checked") ? true : false);
+        }
+    });
+
+</script>
+<script type="text/javascript">
+        
+</script>
+@*}*@
+
+
+@using (Html.BeginForm("DeleteAll_testi", "Admin_user", FormMethod.Post))
+{
+    <div class="panel panel-default table-responsive">
+        <div class="panel-heading">
+            Testimonial Details
+        <span class="label label-info pull-right">4 Items</span>
+        </div>
+        <div class="padding-md clearfix">
+            <table class="table table-striped" id="dataTable">
+                <thead>
+                    <tr style="background-color: lightgray">
+                      <th>
+                        @Html.Label("Select")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Email Id")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Fname")
+                    </th>
+                     <th>
+                        @Html.DisplayName("Lname")
+                    </th>
+                     <th>
+                        @Html.DisplayName("Address")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Gender")
+                    </th>
+                   
+                    
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>
+                                <input class="box" id="assignChkBx1" name="assignChkBx" type="checkbox" />
+                            </td>
+                            <td>
+                             amitatrivedi12@gmail.com
+                            </td>
+                            <td>
+                              It leads me to learn a lot more above my expectations.
+                            </td>
+                            <td>
+                               1/4/2015
+                               
+                            </td><td>Approved</td>
+                            <td>
+                             <img class="img-responsive" src="~/Images/images11.jpg" />
+                            </td>
+
+                           
+                            <td>
+                                @Html.ActionLink("Approve", "Approve_testi") |
+                            @Html.ActionLink("Reject", "Reject_testi") |
+            @Html.ActionLink("Delete", "testi_delete")
+                            </td>
+                        </tr>
+                          <tr>
+                            <td>
+                                <input class="box" id="assignChkBx1" name="assignChkBx" type="checkbox" />
+                            </td>
+                            <td>
+                             kushalmehta@gmail.com
+                            </td>
+                            <td>
+                              A helping hand of IT students.
+                            </td>
+                            <td>
+                               6/4/2015
+                               
+                            </td><td>Pending</td>
+                            <td>
+                              <img class="img-responsive" src="~/Images/images12.jpg" />
+                            </td>
+
+                           
+                            <td>
+                                @Html.ActionLink("Approve", "Approve_testi") |
+                            @Html.ActionLink("Reject", "Reject_testi") |
+            @Html.ActionLink("Delete", "testi_delete")
+                            </td>
+                        </tr>
+                     <tr>
+                            <td>
+                                <input class="box" id="assignChkBx1" name="assignChkBx" type="checkbox" />
+                            </td>
+                            <td>
+                             anishashah@yahoo.com
+                            </td>
+                            <td>
+                              A helpful way to explore knowledge.
+                            </td>
+                            <td>
+                               3/4/2015
+                               
+                            </td><td>Approved</td>
+                            <td>
+                             <img class="img-responsive" src="~/Images/images14.jpg" />
+                            </td>
+
+                           
+                            <td>
+                                @Html.ActionLink("Approve", "Approve_testi") |
+                            @Html.ActionLink("Reject", "Reject_testi") |
+            @Html.ActionLink("Delete", "testi_delete")
+                            </td>
+                        </tr>
+                     <tr>
+                            <td>
+                                <input class="box" id="assignChkBx1" name="assignChkBx" type="checkbox" />
+                            </td>
+                            <td>
+                             bhushanpatel93@gmail.com
+                            </td>
+                            <td>
+                             It is a good website that makes us realize where we exactly stand in terns of the knownledge in it field.
+                            </td>
+                            <td>
+                               4/4/2015
+                               
+                            </td><td>Approved</td>
+                            <td>
+                              <img class="img-responsive" src="~/Images/images16.jpg" />
+                            </td>
+
+                           
+                            <td>
+                                @Html.ActionLink("Approve", "Approve_testi") |
+                            @Html.ActionLink("Reject", "Reject_testi") |
+            @Html.ActionLink("Delete", "testi_delete")
+                            </td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <input type="submit" value="DeleteAll" class="btn btn-primary" />
+    </div>
+}

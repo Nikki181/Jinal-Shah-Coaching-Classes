@@ -1,0 +1,678 @@
+﻿@{
+    ViewBag.Title = "contact_us_admin";
+}
+<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!-- Mirrored from themes.3rdwavemedia.com/college-green/news-single.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 07 May 2014 09:46:06 GMT -->
+<head>
+    <title>Er.JinalShah Coaching classes</title>
+    @section Scripts{
+
+
+        @Scripts.Render("bundles/jquery")
+        @Scripts.Render("bundles/jqueryval")
+    }
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="~/assets/plugins/flexslider/flexslider.css">
+    <link rel="stylesheet" href="~/assets/plugins/pretty-photo/css/prettyPhoto.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="~/assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="~/assets/plugins/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/back-to-top.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/pretty-photo/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jflickrfeed/jflickrfeed.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/main.js"></script>
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Customizable CSS -->
+    <link href="~/assets/css/main.css" rel="stylesheet" data-skrollr-stylesheet>
+    <link href="~/assets/css/green.css" rel="stylesheet" title="Color">
+    <link href="~/assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="~/assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="~/assets/css/animate.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,900,300,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic" rel="stylesheet">
+
+    <!-- Icons/Glyphs -->
+    <link href="~/assets/fonts/fontello.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    @*<link rel="shortcut icon" href="assets/images/favicon.ico">*@
+
+    <!-- JavaScripts placed at the end of the document so the pages load faster -->
+    @*<script src="~/assets/js/jquery.min.js"></script>*@
+    @*<script src="~/assets/js/jquery.easing.1.3.min.js"></script>*@
+    @*<script src="~/assets/js/bootstrap.min.js"></script>*@
+    @*<script src="~/assets/js/bootstrap-hover-dropdown.min.js"></script>*@
+    <script src="~/assets/js/skrollr.min.js"></script>
+    @*<script src="~/assets/js/skrollr.stylesheets.min.js"></script>*@
+    <script src="~/assets/js/waypoints.min.js"></script>
+    <script src="~/assets/js/waypoints-sticky.min.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/jquery.isotope.min.js"></script>
+    <script src="~/assets/js/jquery.easytabs.min.js"></script>
+    <script src="~/assets/js/jquery.slickforms.js"></script>
+    @*<script src="~/assets/js/google.maps.api.v3.js"></script>*@
+    <script src="~/assets/js/viewport-units-buggyfill.js"></script>
+    <script src="~/assets/js/scripts.js"></script>
+
+    <!-- For demo purposes – can be removed on production -->
+    @*<link href="~/assets/css/green.css" rel="alternate stylesheet" title="Green color">*@
+    <link href="~/assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
+    <link href="~/assets/css/red.css" rel="alternate stylesheet" title="Red color">
+    <link href="~/assets/css/pink.css" rel="alternate stylesheet" title="Pink color">
+    <link href="~/assets/css/purple.css" rel="alternate stylesheet" title="Purple color">
+    <link href="~/assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
+    <link href="~/assets/css/navy.css" rel="alternate stylesheet" title="Navy color">
+    <link href="~/assets/css/gray.css" rel="alternate stylesheet" title="Gray color">
+
+    <script src="~/switchstylesheet/switchstylesheet.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".changecolor").switchstylesheet({ seperator: "color" });
+        });
+    </script>
+    <!-- For demo purposes – can be removed on production : End -->
+
+   @*<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>*@
+    <style type="text/css">
+        @@media only screen and (min-width:320px) and (max-width:480px) {
+            #tp {
+                background-color:#6091BA;
+                padding-top:0px;
+             }
+            #tp2 {
+                margin-bottom:-19px;
+            }
+     }
+        @@media only screen and (min-width:768px) and (max-width:1024px) {
+        #tp2 {
+            display:none;
+        }
+        }
+    </style>
+
+    <link href="~/css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- ******HEADER****** -->
+        <header class="header">
+            <div class="top-bar">
+                <div class="container">
+                    <ul class="social-icons col-md-6 col-sm-6 col-xs-12 hidden-xs">
+
+                        <li><a href="https://www.facebook.com/pages/Er-jinal-shah-Coaching-Classes/123651857693940"><i class="fa fa-facebook"></i></a></li>
+
+                        <li><a href="https://accounts.google.com/ServiceLogin?service=oz&passive=1209600&continue=https://plus.google.com/?gpsrc%3Dogpy0"><i class="fa fa-google-plus"></i></a></li>
+
+                    </ul>
+                    <!--//social-icons-->
+
+                </div>
+            </div>
+            <!--//to-bar-->
+            <div class="header-main container">
+                <h1 class="logo col-md-4 col-sm-4">
+                    <a href="#">
+                        <img id="logo" src="~/assets/images/logo.png" alt="Logo"></a>
+                </h1>
+                <!--//logo-->
+                <div class="info col-md-8 col-sm-8">
+                    <ul class="menu-top navbar-right hidden-xs">
+                        <li class="divider"><a href="@Url.Action("contact_us", "Admin_user")">Contact</a></li>
+                        <li class="divider"><a href="@Url.Action("Index", "Admin_our_work")">Our Work</a></li>
+
+                        <li><a href="@Url.Action("log_out", "Admin_user")">Log Out</a></li>
+
+                    </ul>
+                    <!--//menu-top-->
+                    <br />
+                    <div class="contact pull-right">
+                        <p class="phone"><i class="fa fa-phone"></i>Call us today (+91)9825889888</p>
+                        <p class="email"><i class="fa fa-envelope"></i>jinalshah999@gmail.com</p>
+                    </div>
+                    <!--//contact-->
+                </div>
+                <!--//info-->
+            </div>
+            <!--//header-main-->
+        </header>
+        <!--//header-->
+
+        <!-- ******NAV****** -->
+        <nav class="main-nav" role="navigation">
+            <div>
+                <div id="tp" class="navbar-header">
+                    <button id="tp2" class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--//nav-toggle-->
+                </div>
+                <!--//navbar-header-->
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+
+
+                        @*  <li class="nav-item"><a href="@Url.Action("Index","Admin_user")">Home</a></li>*@
+                        <li class="active nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">User  <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "Admin_user")">All User</a></li>
+                                <li><a href="@Url.Action("Pending_user", "Admin_user")">Pending User</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Testimonials <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("testi_all_admin", "Admin_user")">All Testimonials</a></li>
+                                <li><a href="@Url.Action("Pending_testi", "Admin_user")">Pending Testimonials</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">News <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "Admin_news")">All news</a></li>
+                                <li><a href="@Url.Action("add_news_tmp", "Admin_news")">Add News</a></li>
+
+
+                            </ul>
+                        </li>
+
+                        @*for events*@
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Events <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("events_all_admin", "Admin_events")">All Events</a></li>
+                                <li><a href="@Url.Action("add_events_tmp", "Admin_events")">Add Event</a></li>
+                            </ul>
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">FAQ <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Index", "Admin_faq")">All FAQs</a></li>
+                                <li><a href="@Url.Action("add_faq_tmp", "Admin_faq")">Add FAQ</a></li>
+                            </ul>
+                        </li>
+
+                        @*for queston and answerr*@
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="@Url.Action("Index", "Question")">Q & A <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("addque_load", "Admin_question")">Add Question</a></li>
+                                <li><a href="@Url.Action("que_view", "Admin_question")">View Question</a></li>
+                                <li><a href="@Url.Action("Index", "Admin_question")">View question & Answers</a></li>
+                            </ul>
+                        </li>
+
+                        @*for material*@
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="@Url.Action("Index", "Admin_material")">Material<i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("add_view", "Admin_material")">Add Material</a></li>
+                                <li><a href="@Url.Action("Index", "Admin_material")">View Material</a></li>
+                            </ul>
+                        </li>
+
+
+                        @*for blog*@
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="@Url.Action("Index", "Admin_blog")">Blog <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("addview_load", "Admin_blog")">Add Blog</a></li>
+                                <li><a href="@Url.Action("Index", "Admin_blog")">View Blog</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="@Url.Action("view_album", "Admin_album")">Gallery <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("add_album", "Admin_album")">Add Album</a></li>
+                                <li><a href="@Url.Action("view_album", "Admin_album")">View Albums</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="@Url.Action("Index", "Admin_our_work")">Our work<i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("addload", "Admin_our_work")">Add Our Work</a></li>
+                                <li><a href="@Url.Action("Index", "Admin_our_work")">View Our Work</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item"><a href="@Url.Action("our_services", "Admin_user")">Our services</a></li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="@Url.Action("why_us", "Admin_user")">Why Us <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                   <li><a href="@Url.Action("why_us", "Admin_user")">Why Us</a></li>
+                                <li><a href="@Url.Action("about_us", "Admin_user")">About Us</a></li>
+                                <li><a href="@Url.Action("contact_us", "Admin_user")">Contact Us</a></li>
+                                  <li><a href="@Url.Action("follow_us_admin","Admin_user")">Find Us On</a></li>
+                                <li><a href="@Url.Action("Reach_to_us_admin","Admin_user")">Reach To Us</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item"><a href="@Url.Action("Index", "Admin_slide")">Slide</a></li>
+
+
+
+                    </ul>
+                    <!--//nav-->
+
+                    <!--//nav-->
+                </div>
+                <!--//navabr-collapse-->
+            </div>
+            <!--//container-->
+        </nav>
+        <!--//main-nav-->
+
+        <!-- ******CONTENT****** -->
+        <!-- ============================================================= MAIN ============================================================= -->
+
+        <div>
+
+
+
+            <!-- ============================================================= SECTION – HERO ============================================================= -->
+
+            <section id="hero" class="dark-bg img-bg img-bg-soft" style="background-color: rgba(224, 229, 231, 1)">
+                <div class="container inner-top-md inner-bottom-sm">
+                    <div class="row">
+
+                        <div class="col-md-8 inner-right inner-bottom-xs">
+                            <header>
+                                <h2 style="color: #6091BA; font-size: 50px">Get In Touch</h2>
+                                <p>Do you want to know more? We’d love to hear from you!</p>
+                            </header>
+                        </div>
+                        <!-- /.col -->
+
+                        <div class="col-md-4">
+                            <h3 style="margin-top: 8px; color: #6091BA">ER. Jinal Shah Coaching Classes</h3>
+                            <ul class="contacts">
+                                <li><i class="icon-location contact"></i>108, Aarohi Complex, Nr. Rasranjan, Vijay X Road, Ahmedabad-380009.</li>
+                                <li><i class="icon-mobile contact"></i>+91 9825889888</li>
+                                <li><a href="mailto:info@reen.com"><i class="icon-mail-1 contact"></i>jinalshah999@gmail.com</a></li>
+                            </ul>
+                            <!-- /.contacts -->
+                        </div>
+                        <!-- /.col -->
+
+                    </div>
+                    <!-- ./row -->
+                </div>
+                <!-- /.container -->
+            </section>
+
+            <!-- ============================================================= SECTION – HERO : END ============================================================= -->
+
+            <div class="container inner">
+                <div class="row">
+
+                    <div class="col-md-8 inner-right inner-bottom-md">
+
+                        <!-- ============================================================= SECTION – CONTACT FORM ============================================================= -->
+
+                        <section id="contact-form">
+
+                            <h2 style="color: #6091BA">Leave a Message</h2>
+
+                            <form class="forms contact-form" name="contact" action="#" method="post">
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <input type="text" name="name" placeholder="Name" class="form-control input-sm bounceIn animation-delay2">
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <input type="email" name="email" required placeholder="Email" class="form-control input-sm bounceIn animation-delay2">
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <input type="text" name="subject" placeholder="Subject" class="form-control input-sm bounceIn animation-delay2">
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <textarea name="message" required placeholder="Enter your message ..." class="form-control input-sm bounceIn animation-delay2"></textarea>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+
+                                <button type="submit" style="background-color: #6091BA" class="btn btn-default btn-submit">Submit message</button>
+
+                            </form>
+
+                        </section>
+
+                        <!-- ============================================================= SECTION – CONTACT FORM : END ============================================================= -->
+
+                    </div>
+                    <!-- ./col -->
+
+                    <div class="col-md-4">
+
+                        <!-- ============================================================= SECTION – CONTACT NAMES ============================================================= -->
+
+                        @*		<section id="contact-names" class="light-bg inner-xs inner-left-xs inner-right-xs">
+								
+							<h3 style="color: #6091BA" class="team-headline sidelines text-center"><span>Contact names</span></h3>
+							
+							<div class="row thumbs gap-md text-center">
+								
+								<div class="col-sm-6 thumb">
+									<figure class="member">
+										
+										<div class="member-image">
+											
+											<div class="text-overlay">
+												<div class="info">
+													<ul class="social">
+														<li><a href="#"><i class="icon-s-facebook"></i></a></li>
+														<li><a href="#"><i class="icon-s-gplus"></i></a></li>
+														<li><a href="#"><i class="icon-s-twitter"></i></a></li>
+													</ul><!-- /.social -->
+												</div><!-- /.info -->
+											</div><!-- /.text-overlay -->
+											
+											<img src="~/assets/images/art/human03.jpg">
+											
+										</div><!-- /.member-image -->
+										
+										<figcaption class="member-details bordered no-top-border">
+											<h3 style="color: #6091BA">
+												Jinal Shah
+												<span>Creative Director</span>
+											</h3>
+										</figcaption>
+										
+									</figure>
+								</div><!-- /.col -->
+								
+								<div class="col-sm-6 thumb">
+									<figure class="member">
+										
+										<div class="member-image">
+											
+											<div class="text-overlay">
+												<div class="info">
+													<ul class="social">
+														<li><a href="#"><i class="icon-s-facebook"></i></a></li>
+														<li><a href="#"><i class="icon-s-gplus"></i></a></li>
+														<li><a href="#"><i class="icon-s-twitter"></i></a></li>
+													</ul><!-- /.social -->
+												</div><!-- /.info -->
+											</div><!-- /.text-overlay -->
+											
+											<img src="~/assets/images/art/human01.jpg">
+											
+										</div><!-- /.member-image -->
+										
+										<figcaption class="member-details bordered no-top-border">
+											<h3 style="color: #6091BA">
+												Dhruti Shah
+												<span>Faculty</span>
+											</h3>
+										</figcaption>
+										
+									</figure>
+								</div><!-- /.col -->
+								
+							</div><!-- /.row -->
+							
+							<div class="row thumbs gap-md text-center">
+								
+								<div class="col-sm-6 thumb last-bottom">
+									<figure class="member">
+										
+										<div class="member-image">
+											
+											<div class="text-overlay">
+												<div class="info">
+													<ul class="social">
+														<li><a href="#"><i class="icon-s-facebook"></i></a></li>
+														<li><a href="#"><i class="icon-s-gplus"></i></a></li>
+														<li><a href="#"><i class="icon-s-twitter"></i></a></li>
+													</ul><!-- /.social -->
+												</div><!-- /.info -->
+											</div><!-- /.text-overlay -->
+											
+											<img src="~/assets/images/art/human05.jpg">
+											
+										</div><!-- /.member-image -->
+										
+										<figcaption class="member-details bordered no-top-border">
+											<h3 style="color: #6091BA">
+												Shweny Shah
+												<span>Faculty</span>
+											</h3>
+										</figcaption>
+										
+									</figure>
+								</div><!-- /.col -->
+								
+								<div class="col-sm-6 thumb last-bottom">
+									<figure class="member">
+										
+										<div class="member-image">
+											
+											<div class="text-overlay">
+												<div class="info">
+													<ul class="social">
+														<li><a href="#"><i class="icon-s-facebook"></i></a></li>
+														<li><a href="#"><i class="icon-s-gplus"></i></a></li>
+														<li><a href="#"><i class="icon-s-twitter"></i></a></li>
+													</ul><!-- /.social -->
+												</div><!-- /.info -->
+											</div><!-- /.text-overlay -->
+											
+											<img src="~/assets/images/art/human04.jpg">
+											
+										</div><!-- /.member-image -->
+										
+										<figcaption class="member-details bordered no-top-border">
+											<h3 style="color: #6091BA">
+												Toby Evans
+												<span>Senior Designer</span>
+											</h3>
+										</figcaption>
+										
+									</figure>
+								</div><!-- /.col -->
+								
+							</div><!-- /.row -->
+							
+						</section>*@
+
+                        <!-- ============================================================= SECTION – CONTACT NAMES : END ============================================================= -->
+
+                    </div>
+                    <!-- /.col -->
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+            <!-- ============================================================= SECTION – MAP ============================================================= -->
+
+            <section class="height-sm">
+                
+                         @Html.Partial("partial_view")
+                
+            </section>
+
+            <!-- ============================================================= SECTION – MAP : END ============================================================= -->
+
+        </div>
+    </div>
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="container" id="divfooterresp">
+                <div class="footer_new" style="margin-left:110px!important;">
+                    <div class="footer-col col-md-2 col-sm-3 about">
+                        <div class="footer-col-inner">
+                            <h3>About</h3>
+                            <ul>
+                              <li><a href="@Url.Action("about_us","Admin_user")">About</a></li>
+                              <li><a href="@Url.Action("contact_us","Admin_user")">Contact</a></li>
+                                   <li><a href="@Url.Action("why_us","Admin_user")">Why Us</a></li>
+                                <li><a href="@Url.Action("Index","Admin_faq")">All FAQs</a></li>
+                                <li><a href="@Url.Action("Index","Admin_our_work")">Our Work</a></li>
+                                 <li><a href="@Url.Action("our_services","Admin_user")">Our services</a></li>
+
+                            </ul>
+                        </div>
+                        <!--//footer-col-inner-->
+                    </div>
+                    <div class="footer-col col-md-3 col-sm-3 about">
+                        <div class="footer-col-inner">
+                          <h3>Provided Services</h3>
+                        <ul>
+                            <li>Windows Phone 8</li>
+                            <li>Windows Metro Application</li>
+                            <li>HTML5,CSS 3,JQuery,MVC</li>
+                            <li>ASP.NET,PHP,JAVA</li>
+                            <li>IPhone,Android</li>
+                        </ul>
+                        </div>
+                    </div>
+                        <div class="footer-col col-md-3 col-sm-6 about">
+                    <div class="footer-col-inner">
+                
+                        <h3>Our Services</h3>
+                        <ul>
+                            <li>MSC(CA & IT)</li>
+                            <li>BCA</li>
+                            <li>Project Training</li>
+                            <li>Engineering</li>
+                            <li>MCA</li>
+                            <li>ASP.NET</li>
+
+                        </ul>
+                    </div>
+                </div>
+                    <!--//foooter-col-->
+                
+                    <div class="footer-col col-md-3 col-sm-4 about">
+                        <div class="footer-col-inner">
+                            <h3>Contact us</h3>
+                            <div class="row">
+                                <p >
+                                    <i class="fa fa-map-marker pull-left"></i>
+                                    <span>
+                                        <span >108, Aarohi Complex</span><br>
+                                        <span >Nr. Rasranjan, Vijay X Road</span><br>
+                                        <span >Ahmedabad-380009.</span><br>
+                                        <span>India</span>
+                                    </span>
+                                </p>
+                                <p><i class="fa fa-phone"></i>09825889888</p>
+                                <p ><i class="fa fa-envelope"></i>jinalshah@gmail.com</p>
+                            </div>
+                        </div>
+                        <!--//footer-col-inner-->
+                    </div>
+                    <!--//foooter-col-->
+                </div>
+            </div>
+        </div>
+        <!--//footer-content-->
+        <div class="bottom-bar">
+            <div class="container">
+                <div class="row">
+                    <small class="copyright col-md-6 col-sm-12 col-xs-12">Copyright 2014  ER. Jinal Shah Coaching Classes</small>
+                   </div>
+                <!--//row-->
+            </div>
+            <!--//container-->
+        </div>
+        <!--//bottom-bar-->
+    </footer>
+    <!--//footer-->
+
+    @*  <!-- *****CONFIGURE STYLE****** -->
+    <div class="config-wrapper hidden-xs">
+        <div class="config-wrapper-inner">
+            <a id="config-trigger" class="config-trigger" href="#"><i class="fa fa-cog"></i></a>
+            <div id="config-panel" class="config-panel">
+                <p>Choose Colour</p>
+                <ul id="color-options" class="list-unstyled list-inline">
+                    <li class="default active"><a data-style="~/assets/css/styles.css" data-logo="~/assets/images/logo.png" href="#"></a></li>
+                    <li class="green"><a data-style="~/assets/css/styles-green.css" data-logo="~/assets/images/logo-green.png" href="#"></a></li>
+                    <li class="purple"><a data-style="~/assets/css/styles-purple.css" data-logo="~/assets/images/logo-purple.png" href="#"></a></li>
+                    <li class="red"><a data-style="~/assets/css/styles-red.css" data-logo="~/assets/images/logo-red.png" href="#"></a></li>
+                </ul>
+                <!--//color-options-->
+                <a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
+            </div>
+            <!--//configure-panel-->
+        </div>
+        <!--//config-wrapper-inner-->
+    </div>
+    <!--//config-wrapper-->*@
+
+    <!-- Javascript -->
+
+
+</body>
+
+<!-- Mirrored from themes.3rdwavemedia.com/college-green/news-single.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 07 May 2014 09:46:07 GMT -->
+</html>
+
+
+

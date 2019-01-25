@@ -1,0 +1,30 @@
+﻿@model jinalshah_coaching_class.Areas.Admin.Models.user_admin
+
+@{
+    ViewBag.Title = "user_edit_admin";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+
+@using (Html.BeginForm("user_edit", "Admin_user", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>User Edit</legend>
+
+        
+        <div class="editor-label">
+            @Html.Label("Status")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.status)
+            @Html.ValidationMessageFor(model => model.status)
+        </div>
+    <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+

@@ -1,0 +1,46 @@
+﻿@model jinalshah_coaching_class.Areas.Admin.Models.album_admin
+
+@{
+    ViewBag.Title = "add_album_admin";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+@section Scripts{
+     @Scripts.Render("bundles/jquery")
+    @Scripts.Render("bundles/jqueryval")
+}
+
+@using (Html.BeginForm("insert_album", "Admin_album", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    
+
+       <div class="panel panel-default">
+               <div class="panel-heading">
+                     <h4 class="panel-title"><i>Add Stream</i></h4>
+               </div>
+              <div class="panel-body">
+                                    
+                            <div class="form-group">
+								<label for="name">Stream Name</label>
+								        <input type="text" id="name" required name="name" class="form-control input-sm" />
+								</div><!-- /form-group -->		
+
+                              @*  <div class="form-group">
+                                    <label for="name">Gallery Image</label>
+                                   <input  type="file" name="fileuploadDemo"  id="fileupld" class="form-control input-sm" />
+                                </div><!--//form-group-->
+                       *@
+                             
+                           <hr />
+                                 <div class="controls text-left">
+                                       <h3><i class="fa fa-upload " style="color:#6091ba">
+                                         <input type="submit" value="Add" class="btn btn-theme"  name="Add" />
+                                        </i></h3>
+                                </div>
+    </div>
+                                    </div>
+    
+}
+
+

@@ -1,0 +1,127 @@
+﻿@model jinalshah_coaching_class.Areas.User_data.Models.user
+@{
+    ViewBag.Title = "edit_profile";
+    Layout = "~/Areas/User_data/Views/Shared/_master1.cshtml";
+}
+
+@section Scripts{
+     @Scripts.Render("bundles/jquery")
+    @Scripts.Render("bundles/jqueryval")
+}
+ <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Font Awesome -->
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	
+	<!-- Endless -->
+	@*<link href="css/endless.min.css" rel="stylesheet">*@
+
+ <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <!-- Jquery -->
+	<script src="js/jquery-1.10.2.min.js"></script>
+    
+    <!-- Bootstrap -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+   
+	<!-- Modernizr -->
+	<script src='js/modernizr.min.js'></script>
+   
+    <!-- Pace -->
+	<script src='js/pace.min.js'></script>
+   
+    <!-- Popup Overlay -->
+	<script src='js/jquery.popupoverlay.min.js'></script>
+   
+    <!-- Slimscroll -->
+	<script src='js/jquery.slimscroll.min.js'></script>
+   
+	<!-- Cookie -->
+	<script src='js/jquery.cookie.min.js'></script>
+
+	<!-- Endless -->
+	@*<script src="js/endless/endless.js"></script>*@
+
+@using (Html.BeginForm("edit", "User", FormMethod.Post))
+{
+
+
+<div class="login-wrapper">
+		
+		<div class="login-widget animation-delay1">	
+			<div class="panel panel-default">
+				<div class="panel-heading clearfix">
+					<div class="pull-left">
+						 Edit Profile
+					</div>
+
+				</div>
+				<div class="panel-body">
+					<form class="form-login">
+                        <div>@*"profile col-md-4 pull-right"*@
+                               
+                               <img class="img-res-new"  height="225" width="200" src="~/Images/images11.jpg"  alt=""/><br /><br />
+                               <br />
+                              
+                            <label>Photo :</label>&nbsp;
+                               <input   type="file" name="fileuploadDemo"  id="fileupld" class="form-control input-sm" />
+                           
+                                
+                         </div>
+                                    <div class="form-group">
+							        <label>First name :</label>&nbsp;
+							        <input type="text" required placeholder="First Name" name="fname"  class="form-control input-sm" value="Amita">
+                                    
+                                    </div>
+                                    <div>
+                                        <label>Last  name :</label>&nbsp;
+							        <input type="text" required placeholder="Last Name" name="lname"  class="form-control input-sm" value="Trivedi">
+                                    </div>
+                                    
+
+                       <br />
+                        <div class="form-group">
+							<label>Address  :</label>&nbsp;
+                            <textarea  placeholder="Address" required name="address" class="form-control input-sm" rows="6">Paldi</textarea>
+							
+                        </div>
+                                    
+                        <div class="form-group">
+							<label>Gender :</label>&nbsp;
+                          
+                           
+                            <input type="text" placeholder="Gender" required name="gender" class="form-control input-sm" value="Female">
+                        </div>
+                        <div class="form-group" >
+							<label>Email-id  :</label>&nbsp;
+                             <label>amitatrivedi12@gmail.com</label>
+							
+						</div>
+
+                        <div class="form-group">
+							<label>Semester :</label>&nbsp;
+                            <select name="sem" class="form-control input-sm" >
+										<option>5th semester</option>
+                                        <option>2</option>
+										<option>3</option>
+                                </select>
+                            @*<input type="text" placeholder="Username" name="semester" class="form-control input-sm bounceIn animation-delay2" value="@Model.semester" style="margin-left:80px; margin-top:-30px; width:120%">*@
+						</div>
+                         
+                       
+                    <div class="controls text-right">
+                                      <h3>
+                                        <button type="submit" class="btn btn-theme">Save</button>
+                                       </h3>
+                        
+                        </div>
+					</form>
+				</div>
+			</div><!-- /panel -->
+		</div><!-- /login-widget -->
+	</div><!-- /login-wrapper -->
+
+}

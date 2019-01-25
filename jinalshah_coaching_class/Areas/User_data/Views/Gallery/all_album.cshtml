@@ -1,0 +1,79 @@
+﻿@model IEnumerable<jinalshah_coaching_class.Areas.User_data.Models.Album>
+@{
+    ViewBag.Title = "all_album";
+    Layout = "~/Areas/User_data/Views/Shared/_master1.cshtml";
+}
+
+ <link rel="shortcut icon" href="~/favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>     
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="~/assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="~/assets/plugins/flexslider/flexslider.css">
+    <link rel="stylesheet" href="~/assets/plugins/pretty-photo/css/prettyPhoto.css">  
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="~/assets/css/styles.css">
+
+<script type="text/javascript" src="~/assets/plugins/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="~/assets/plugins/bootstrap-hover-dropdown.min.js"></script> 
+    <script type="text/javascript" src="~/assets/plugins/back-to-top.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/pretty-photo/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jflickrfeed/jflickrfeed.min.js"></script> 
+    <script type="text/javascript" src="~/assets/js/main.js"></script>  
+    <style type="text/css">
+       @@media only screen and (min-width:320px) and (max-width:480px) {
+         #res{
+            width:280px;
+            }
+        }
+       #res2 {
+           margin-left:20px;
+       }
+     </style>
+
+<header class="page-heading clearfix">
+      <h1 class="heading-title pull-left">Fill Details</h1>
+</header>  
+
+ <div class="form-group">
+								<label for="name">Subject</label>
+						        <select name="sem" class="form-control input-sm" >
+										<option>C++</option>
+                                        <option>C</option>
+										
+                                    </select>
+							  </div><!-- /form-group -->
+							
+                          
+                              <div class="form-group">
+								<label for="name">Exam Level</label>
+						       <select name="sem" class="form-control input-sm" >
+										<option>Easy</option>
+                                        <option>Medium</option>
+										<option>Tough</option>
+										
+                             </select>
+							  </div>
+
+                                             <div class="form-group">
+								<label for="name">Exam Marks</label>
+						        <input type="text" id="txtsub" name="news_title" required class="form-control input-sm" value="50">
+							  </div>
+
+ <div class="form-group">
+								<label for="name">Exam Duration</label>
+						        <input type="text" id="txtsub" name="news_title" required class="form-control input-sm" value="30 mins" >
+							  </div>
+
+  <hr />
+                                  <div class="controls text-center">
+                                       <h3><i class="fa fa-upload " style="color:#6091ba">
+                                         <input type="submit" value="Start Exam" class="btn btn-theme"  name="submit" />
+                                        </i></h3>
+                                </div><!--//album-wrapper-->
+

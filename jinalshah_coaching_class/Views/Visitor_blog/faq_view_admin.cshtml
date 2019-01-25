@@ -1,0 +1,134 @@
+﻿@model IEnumerable<jinalshah_coaching_class.Areas.Admin.Models.faq_admin>
+
+@{
+    ViewBag.Title = "faq_view_admin";
+    Layout = "~/Views/Shared/_master1_visitor.cshtml";
+}
+
+@*@section Scripts{*@
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome-->
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Pace -->
+    @*<link href="css/pace.css" rel="stylesheet">*@
+
+    <!-- Datatable -->
+    <link href="~/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Endless -->
+    @*<link href="css/endless.min.css" rel="stylesheet">*@
+    <link href="~/css/endless-skin.css" rel="stylesheet">
+    <script src="~/js/jquery-1.10.2.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Datatable -->
+    <script src='~/js/jquery.dataTables.min.js'></script>
+
+    <!-- Modernizr -->
+    <script src='~/js/modernizr.min.js'></script>
+
+    <!-- Pace -->
+    @*<script src='js/pace.min.js'></script>*@
+
+    <!-- Popup Overlay -->
+    <script src='~/js/jquery.popupoverlay.min.js'></script>
+
+    <!-- Slimscroll -->
+    <script src='~/js/jquery.slimscroll.min.js'></script>
+
+    <!-- Cookie -->
+    <script src='~/js/jquery.cookie.min.js'></script>
+    <!-- Endless -->
+    <script src="~/js/endless/endless.js"></script>
+
+    <script>
+        $(function () {
+            $('#dataTable').dataTable({
+                "bJQueryUI": true,
+                "sPaginationType": "full_numbers"
+            });
+
+            $('#chk-all').click(function () {
+                if ($(this).is(':checked')) {
+                    $('#responsiveTable').find('.chk-row').each(function () {
+                        $(this).prop('checked', true);
+                        $(this).parent().parent().parent().addClass('selected');
+                    });
+                }
+                else {
+                    $('#responsiveTable').find('.chk-row').each(function () {
+                        $(this).prop('checked', false);
+                        $(this).parent().parent().parent().removeClass('selected');
+                    });
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        //Select/Deselect all checkboxs in the grid
+
+        $("#allBox").click(function () {
+            if ($("#allBox").is(":checked") == true) {
+                $(".box").attr("checked", $(this).attr("checked") ? true : true);
+            }
+            else {
+                $(".box").attr("checked", $(this).attr("checked") ? true : false);
+            }
+        });
+
+    </script>
+    <script type="text/javascript">
+        
+    </script>
+@*}*@
+
+<h4>
+       
+</h4>
+<header class="page-heading clearfix">
+                    <h1 class="heading-title pull-left "> <img class="img-responsive" src="~/Images/Untitled.png"  alt=""></h1>
+                   
+         </header>  
+
+@using (Html.BeginForm("DeleteAll", "Admin_faq", FormMethod.Post))
+{ 
+    <div class="form-group">
+        <br />
+      
+                                    <label for="name">First Name</label>&nbsp;&nbsp;&nbsp;&nbsp;Zankhana
+                                   
+                                </div><!--//form-group-->
+                    
+                              <div class="form-group">
+                                    <label for="name">Last Name</label>&nbsp;&nbsp;&nbsp;&nbsp;Patel
+                                   
+                                </div>
+                                             <div class="form-group">
+                                    <label for="name">Email-Id</label>&nbsp;&nbsp;&nbsp;&nbsp;zankhanapatel99@gmail.com
+                                   
+                                </div>
+                                            @* <div class="form-group">
+                                    <label for="name">Password</label>
+                                    <input id="txtsub" name="txtsub" type="text" class="form-control input-sm" required placeholder="Enter Password">
+                                </div>*@
+                                             <div class="form-group">
+                                    <label for="name">Degree</label>&nbsp;&nbsp;&nbsp;&nbsp;MCA
+                                   
+                                </div>
+                                            <div class="form-group">
+                                    <label for="name">Subjects</label>&nbsp;&nbsp;&nbsp;&nbsp;C,C++
+                                   
+                                </div>
+     
+                                 <div class="form-group">
+                                           <h3><i class="fa fa-upload " style="color:#6091ba">
+                                       <input type="submit" value="Ok" class="btn btn-theme"  name="Save"/>
+                                        </i>
+                                       </h3>
+                                </div>
+    
+}
+

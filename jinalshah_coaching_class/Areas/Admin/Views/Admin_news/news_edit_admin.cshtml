@@ -1,0 +1,106 @@
+﻿@model jinalshah_coaching_class.Areas.Admin.Models.news_admin
+
+@{
+    ViewBag.Title = "news_edit_admin";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+
+
+@using (Html.BeginForm("news_edit", "Admin_news", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <form name="form1" id="form1">
+                            <span style="color:red">@ViewBag.msg </span>
+                               
+                                <div class="form-group">
+                                    <label for="name">First Name</label>
+                                    <input id="name" name="txtfnm" type="text" class="form-control input-sm" value="Zankhana">
+                                </div><!--//form-group-->
+
+                                <div class="form-group">
+                                    <label for="name">Last Name</label>
+                                    <input  name="txtlnm" type="text" class="form-control input-sm" value="Patel">
+                                </div><!--//form-group-->
+
+                               <div class="form-group">
+							    <label for="email">Email Address<span class="required"></span></label>
+							        <input name="txteid" type="email" value="zankhanapatel99@gmail.com" class="form-control input-sm">
+						        </div><!-- /form-group -->
+        
+                                 <div class="form-group">
+                                <label for="pwd">Degree</label>
+						        	<input name="txtpwd" type="text" value="MCA" class="form-control input-sm">
+						        </div>
+                           
+                                 <div class="form-group">
+                                <label for="pwd">Subjects</label>
+						        	<input name="txtpwd" type="text" value="C,C++" class="form-control input-sm">
+						        </div><!-- /form-group -->
+						
+                               
+                    
+                              <!-- /form-group -->
+						
+                               
+                                <br/>
+
+						      <div class="controls text-left">
+                                     <h3><i class="fa fa-plus-circle" style="color:#6091ba">
+                                         <input type="submit" id="sub" class="btn btn-theme" value="Save" />
+                                       
+                                        </i></h3>
+                        
+							    </div>
+
+    </form> 
+    @*<fieldset>
+        <legend>News Edit</legend>
+
+        
+        <div class="editor-label">
+            @Html.Label("First Name")
+        </div>
+        <div class="editor-field">
+            Zankhana
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Last Name")
+        </div>
+        <div class="editor-field">
+           Patel
+        </div>
+
+       
+        <div class="editor-label">
+            @Html.Label("Email-Id")
+        </div>
+        <div class="editor-field">
+           zankhanapatel99@gmail.com
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Degree")
+        </div>
+        <div class="editor-field">
+            MCA
+        </div>
+
+         <div class="editor-label">
+            @Html.Label("Subjects")
+        </div>
+        <div class="editor-field">
+            C,C++
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>*@
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

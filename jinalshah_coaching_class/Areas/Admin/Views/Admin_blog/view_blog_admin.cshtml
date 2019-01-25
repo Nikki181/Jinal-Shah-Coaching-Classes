@@ -1,0 +1,2140 @@
+﻿
+
+@model IEnumerable<jinalshah_coaching_class.Areas.Admin.Models.user_admin>
+
+@{
+    ViewBag.Title = "user_view_admin";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+@*@section Scripts{*@
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome-->
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Pace -->
+    @*<link href="css/pace.css" rel="stylesheet">*@
+
+    <!-- Datatable -->
+    <link href="~/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Endless -->
+    @*<link href="css/endless.min.css" rel="stylesheet">*@
+    <link href="~/css/endless-skin.css" rel="stylesheet">
+    <script src="~/js/jquery-1.10.2.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Datatable -->
+    <script src='~/js/jquery.dataTables.min.js'></script>
+
+    <!-- Modernizr -->
+    <script src='~/js/modernizr.min.js'></script>
+
+    <!-- Pace -->
+    @*<script src='js/pace.min.js'></script>*@
+
+    <!-- Popup Overlay -->
+    <script src='~/js/jquery.popupoverlay.min.js'></script>
+
+    <!-- Slimscroll -->
+    <script src='~/js/jquery.slimscroll.min.js'></script>
+
+    <!-- Cookie -->
+    <script src='~/js/jquery.cookie.min.js'></script>
+    <!-- Endless -->
+    <script src="~/js/endless/endless.js"></script>
+
+    <script>
+        $(function () {
+            $('#dataTable').dataTable({
+                "bJQueryUI": true,
+                "sPaginationType": "full_numbers"
+            });
+
+            $('#chk-all').click(function () {
+                if ($(this).is(':checked')) {
+                    $('#responsiveTable').find('.chk-row').each(function () {
+                        $(this).prop('checked', true);
+                        $(this).parent().parent().parent().addClass('selected');
+                    });
+                }
+                else {
+                    $('#responsiveTable').find('.chk-row').each(function () {
+                        $(this).prop('checked', false);
+                        $(this).parent().parent().parent().removeClass('selected');
+                    });
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        //Select/Deselect all checkboxs in the grid
+
+        $("#allBox").click(function () {
+            if ($("#allBox").is(":checked") == true) {
+                $(".box").attr("checked", $(this).attr("checked") ? true : true);
+            }
+            else {
+                $(".box").attr("checked", $(this).attr("checked") ? true : false);
+            }
+        });
+
+    </script>
+    <script type="text/javascript">
+        
+    </script>
+@*}*@
+
+
+
+
+@using (Html.BeginForm("DeleteAll","Admin_user", FormMethod.Post))
+{
+    <div class="panel panel-default table-responsive">
+    <div class="panel-heading">
+       User Details
+        <span class="label label-info pull-right">51 Items</span>
+    </div>
+    <div class="padding-md clearfix">
+ <table class="table table-striped" id="dataTable">
+            <thead>
+                <tr style="background-color:lightgray">
+                    <th>
+                        @Html.Label("Select")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Email Id")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Fname")
+                    </th>
+                     <th>
+                        @Html.DisplayName("Lname")
+                    </th>
+                     <th>
+                        @Html.DisplayName("Address")
+                    </th>
+                     <th>
+                        @Html.DisplayName("Gender")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Degree")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Semester")
+                    </th>
+                     <th>
+                        @Html.DisplayName("Photo")
+                    </th>
+                    
+                    <th>Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                
+                   
+
+
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            ramanjogi@gmail.com
+                        </td>
+                        <td>
+                           Raman
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Surat
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            BCA
+                        </td>
+                         <td>
+                           7th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            amrutashah@gmail.com
+                        </td>
+                        <td>
+                           Amruta
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Satellite
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            MCA
+                        </td>
+                         <td>
+                           10th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/images21.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                           
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            ashmipatel123@yahoo.com
+                        </td>
+                        <td>
+                           Ashmi
+                        </td>
+                        <td>
+                            Patel
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            BSCIT
+                        </td>
+                         <td>
+                           6th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/images22.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                            
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            bhavesh34@yahoo.com
+                        </td>
+                        <td>
+                           Bhavesh
+                        </td>
+                        <td>
+                            Panchal
+                        </td>
+                         <td>
+                            Baroda
+                        </td>
+                         <td>
+                           Maale
+                        </td>
+                         <td>
+                            BE
+                        </td>
+                         <td>
+                           8th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/images23.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           smartme@gmail.com
+                        </td>
+                        <td>
+                           Ashwin
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Aanand
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            MCA
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/images24.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                         
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           sanket562@gmail.com
+                        </td>
+                        <td>
+                           Sanket
+                        </td>
+                        <td>
+                            Soni
+                        </td>
+                         <td>
+                            Surat
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            BTech
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/images25.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                           
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            manishvyas@gmail.com
+                        </td>
+                        <td>
+                           Manish
+                        </td>
+                        <td>
+                            Vyas
+                        </td>
+                         <td>
+                            Paldi
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            BE
+                        </td>
+                         <td>
+                           5th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/images26.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                          
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            shahmruhi2@yahoo.com
+                        </td>
+                        <td>
+                           Mruhi
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Paldi
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            BTech
+                        </td>
+                         <td>
+                           6th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/images27.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           dharapatel@gmail.com
+                        </td>
+                        <td>
+                           Dhara
+                        </td>
+                        <td>
+                            Patel
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                           MSCIT
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/images28.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           dharmesh34@gmail.com
+                        </td>
+                        <td>
+                           Dharmesh
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                           MSCIT
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/images29.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                          
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           smpatel@gmail.com
+                        </td>
+                        <td>
+                           Samkit
+                        </td>
+                        <td>
+                            Patel
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                           BE
+                        </td>
+                         <td>
+                           7th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/images30.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                        
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           anarparmar21@gmail.com
+                        </td>
+                        <td>
+                           Anar
+                        </td>
+                        <td>
+                            Parmar
+                        </td>
+                         <td>
+                            Surat
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                           BSCIT
+                        </td>
+                         <td>
+                           5th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+
+                  <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            aashima112@yahoo.com
+                        </td>
+                        <td>
+                           Aashima
+                        </td>
+                        <td>
+                            Kadakia
+                        </td>
+                         <td>
+                            Paldi
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            BE
+                        </td>
+                         <td>
+                           6th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            ramanjogi@gmail.com
+                        </td>
+                        <td>
+                           Raman
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Surat
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            BCA
+                        </td>
+                         <td>
+                           7th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                           
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            amrutashah@gmail.com
+                        </td>
+                        <td>
+                           Amruta
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Satellite
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            MCA
+                        </td>
+                         <td>
+                           10th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            ashmipatel123@yahoo.com
+                        </td>
+                        <td>
+                           Ashmi
+                        </td>
+                        <td>
+                            Patel
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            BSCIT
+                        </td>
+                         <td>
+                           6th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            bhavesh34@yahoo.com
+                        </td>
+                        <td>
+                           Bhavesh
+                        </td>
+                        <td>
+                            Panchal
+                        </td>
+                         <td>
+                            Baroda
+                        </td>
+                         <td>
+                           Maale
+                        </td>
+                         <td>
+                            BE
+                        </td>
+                         <td>
+                           8th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           smartme@gmail.com
+                        </td>
+                        <td>
+                           Ashwin
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Aanand
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            MCA
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           sanket562@gmail.com
+                        </td>
+                        <td>
+                           Sanket
+                        </td>
+                        <td>
+                            Soni
+                        </td>
+                         <td>
+                            Surat
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            BTech
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            manishvyas@gmail.com
+                        </td>
+                        <td>
+                           Manish
+                        </td>
+                        <td>
+                            Vyas
+                        </td>
+                         <td>
+                            Paldi
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            BE
+                        </td>
+                         <td>
+                           5th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            shahmruhi2@yahoo.com
+                        </td>
+                        <td>
+                           Mruhi
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Paldi
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            BTech
+                        </td>
+                         <td>
+                           6th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           dharapatel@gmail.com
+                        </td>
+                        <td>
+                           Dhara
+                        </td>
+                        <td>
+                            Patel
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                           MSCIT
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           dharmesh34@gmail.com
+                        </td>
+                        <td>
+                           Dharmesh
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                           MSCIT
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           smpatel@gmail.com
+                        </td>
+                        <td>
+                           Samkit
+                        </td>
+                        <td>
+                            Patel
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                           BE
+                        </td>
+                         <td>
+                           7th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           anarparmar21@gmail.com
+                        </td>
+                        <td>
+                           Anar
+                        </td>
+                        <td>
+                            Parmar
+                        </td>
+                         <td>
+                            Surat
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                           BSCIT
+                        </td>
+                         <td>
+                           5th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+
+                  <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            aashima112@yahoo.com
+                        </td>
+                        <td>
+                           Aashima
+                        </td>
+                        <td>
+                            Kadakia
+                        </td>
+                         <td>
+                            Paldi
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            BE
+                        </td>
+                         <td>
+                           6th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            ramanjogi@gmail.com
+                        </td>
+                        <td>
+                           Raman
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Surat
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            BCA
+                        </td>
+                         <td>
+                           7th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            amrutashah@gmail.com
+                        </td>
+                        <td>
+                           Amruta
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Satellite
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            MCA
+                        </td>
+                         <td>
+                           10th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            ashmipatel123@yahoo.com
+                        </td>
+                        <td>
+                           Ashmi
+                        </td>
+                        <td>
+                            Patel
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            BSCIT
+                        </td>
+                         <td>
+                           6th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            bhavesh34@yahoo.com
+                        </td>
+                        <td>
+                           Bhavesh
+                        </td>
+                        <td>
+                            Panchal
+                        </td>
+                         <td>
+                            Baroda
+                        </td>
+                         <td>
+                           Maale
+                        </td>
+                         <td>
+                            BE
+                        </td>
+                         <td>
+                           8th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           smartme@gmail.com
+                        </td>
+                        <td>
+                           Ashwin
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Aanand
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            MCA
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           sanket562@gmail.com
+                        </td>
+                        <td>
+                           Sanket
+                        </td>
+                        <td>
+                            Soni
+                        </td>
+                         <td>
+                            Surat
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            BTech
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            manishvyas@gmail.com
+                        </td>
+                        <td>
+                           Manish
+                        </td>
+                        <td>
+                            Vyas
+                        </td>
+                         <td>
+                            Paldi
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            BE
+                        </td>
+                         <td>
+                           5th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            shahmruhi2@yahoo.com
+                        </td>
+                        <td>
+                           Mruhi
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Paldi
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            BTech
+                        </td>
+                         <td>
+                           6th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           dharapatel@gmail.com
+                        </td>
+                        <td>
+                           Dhara
+                        </td>
+                        <td>
+                            Patel
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                           MSCIT
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           dharmesh34@gmail.com
+                        </td>
+                        <td>
+                           Dharmesh
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                           MSCIT
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           smpatel@gmail.com
+                        </td>
+                        <td>
+                           Samkit
+                        </td>
+                        <td>
+                            Patel
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                           BE
+                        </td>
+                         <td>
+                           7th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           anarparmar21@gmail.com
+                        </td>
+                        <td>
+                           Anar
+                        </td>
+                        <td>
+                            Parmar
+                        </td>
+                         <td>
+                            Surat
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                           BSCIT
+                        </td>
+                         <td>
+                           5th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                  <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            aashima112@yahoo.com
+                        </td>
+                        <td>
+                           Aashima
+                        </td>
+                        <td>
+                            Kadakia
+                        </td>
+                         <td>
+                            Paldi
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            BE
+                        </td>
+                         <td>
+                           6th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            ramanjogi@gmail.com
+                        </td>
+                        <td>
+                           Raman
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Surat
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            BCA
+                        </td>
+                         <td>
+                           7th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            amrutashah@gmail.com
+                        </td>
+                        <td>
+                           Amruta
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Satellite
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            MCA
+                        </td>
+                         <td>
+                           10th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            ashmipatel123@yahoo.com
+                        </td>
+                        <td>
+                           Ashmi
+                        </td>
+                        <td>
+                            Patel
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            BSCIT
+                        </td>
+                         <td>
+                           6th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            bhavesh34@yahoo.com
+                        </td>
+                        <td>
+                           Bhavesh
+                        </td>
+                        <td>
+                            Panchal
+                        </td>
+                         <td>
+                            Baroda
+                        </td>
+                         <td>
+                           Maale
+                        </td>
+                         <td>
+                            BE
+                        </td>
+                         <td>
+                           8th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           smartme@gmail.com
+                        </td>
+                        <td>
+                           Ashwin
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Aanand
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            MCA
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           sanket562@gmail.com
+                        </td>
+                        <td>
+                           Sanket
+                        </td>
+                        <td>
+                            Soni
+                        </td>
+                         <td>
+                            Surat
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            BTech
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            manishvyas@gmail.com
+                        </td>
+                        <td>
+                           Manish
+                        </td>
+                        <td>
+                            Vyas
+                        </td>
+                         <td>
+                            Paldi
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                            BE
+                        </td>
+                         <td>
+                           5th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                            shahmruhi2@yahoo.com
+                        </td>
+                        <td>
+                           Mruhi
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Paldi
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                            BTech
+                        </td>
+                         <td>
+                           6th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                 <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           dharapatel@gmail.com
+                        </td>
+                        <td>
+                           Dhara
+                        </td>
+                        <td>
+                            Patel
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                           MSCIT
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           dharmesh34@gmail.com
+                        </td>
+                        <td>
+                           Dharmesh
+                        </td>
+                        <td>
+                            Shah
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                           MSCIT
+                        </td>
+                         <td>
+                           9th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           smpatel@gmail.com
+                        </td>
+                        <td>
+                           Samkit
+                        </td>
+                        <td>
+                            Patel
+                        </td>
+                         <td>
+                            Ahmedabad
+                        </td>
+                         <td>
+                           Male
+                        </td>
+                         <td>
+                           BE
+                        </td>
+                         <td>
+                           7th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox"  />
+                        </td>
+                        <td>
+                           anarparmar21@gmail.com
+                        </td>
+                        <td>
+                           Anar
+                        </td>
+                        <td>
+                            Parmar
+                        </td>
+                         <td>
+                            Surat
+                        </td>
+                         <td>
+                           Female
+                        </td>
+                         <td>
+                           BSCIT
+                        </td>
+                         <td>
+                           5th semester
+                        </td>
+                         
+                        <td>
+                        
+                                    <img src="~/Images/random-click-2458.jpg" class="img-resposive" height="80" width="80"/>
+                        
+
+                        </td>
+                        <td>
+                             
+                            @Html.ActionLink("Edit", "Reject_user") |
+            @Html.ActionLink("Delete", "user_delete")
+                        </td>
+                    </tr>
+
+
+
+                
+            </tbody>
+        </table>
+    </div>
+    <input type="submit" value="DeleteAll" class="btn btn-primary" />
+        </div>
+        }

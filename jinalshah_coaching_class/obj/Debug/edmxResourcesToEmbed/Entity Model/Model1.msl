@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+    <EntitySetMapping Name="and_album_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_album_tbl">
+        <MappingFragment StoreEntitySet="and_album_tbl">
+          <ScalarProperty Name="pk_album_id" ColumnName="pk_album_id" />
+          <ScalarProperty Name="album_name" ColumnName="album_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="and_answer_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_answer_tbl">
+        <MappingFragment StoreEntitySet="and_answer_tbl">
+          <ScalarProperty Name="pk_ans_id" ColumnName="pk_ans_id" />
+          <ScalarProperty Name="fk_que_id" ColumnName="fk_que_id" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="ans_img" ColumnName="ans_img" />
+          <ScalarProperty Name="fk_email_id" ColumnName="fk_email_id" />
+          <ScalarProperty Name="a_date" ColumnName="a_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="and_blog_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_blog_tbl">
+        <MappingFragment StoreEntitySet="and_blog_tbl">
+          <ScalarProperty Name="pk_blog_id" ColumnName="pk_blog_id" />
+          <ScalarProperty Name="blog_desc" ColumnName="blog_desc" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="fk_email_id" ColumnName="fk_email_id" />
+          <ScalarProperty Name="blog_image" ColumnName="blog_image" />
+          <ScalarProperty Name="blog_date_" ColumnName="blog_date " />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="and_comment_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_comment_tbl">
+        <MappingFragment StoreEntitySet="and_comment_tbl">
+          <ScalarProperty Name="pk_comment_id" ColumnName="pk_comment_id" />
+          <ScalarProperty Name="fk_blog_id" ColumnName="fk_blog_id" />
+          <ScalarProperty Name="fk_email_id" ColumnName="fk_email_id" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="cmt_date" ColumnName="cmt_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="and_event_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_event_tbl">
+        <MappingFragment StoreEntitySet="and_event_tbl">
+          <ScalarProperty Name="pk_event_id" ColumnName="pk_event_id" />
+          <ScalarProperty Name="event_name" ColumnName="event_name" />
+          <ScalarProperty Name="event_desc" ColumnName="event_desc" />
+          <ScalarProperty Name="speaker" ColumnName="speaker" />
+          <ScalarProperty Name="topic" ColumnName="topic" />
+          <ScalarProperty Name="event_img" ColumnName="event_img" />
+          <ScalarProperty Name="event_date_" ColumnName="event_date " />
+          <ScalarProperty Name="event_time" ColumnName="event_time" />
+          <ScalarProperty Name="event_place" ColumnName="event_place" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="and_faq_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_faq_tbl">
+        <MappingFragment StoreEntitySet="and_faq_tbl">
+          <ScalarProperty Name="pk_faq_id" ColumnName="pk_faq_id" />
+          <ScalarProperty Name="que" ColumnName="que" />
+          <ScalarProperty Name="ans" ColumnName="ans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="and_gallery_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_gallery_tbl">
+        <MappingFragment StoreEntitySet="and_gallery_tbl">
+          <ScalarProperty Name="pk_gallery_id" ColumnName="pk_gallery_id" />
+          <ScalarProperty Name="gallery_image" ColumnName="gallery_image" />
+          <ScalarProperty Name="fk_album_id" ColumnName="fk_album_id" />
+          <ScalarProperty Name="gallery_caption" ColumnName="gallery_caption" />
+          <ScalarProperty Name="location" ColumnName="location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="and_material_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_material_tbl">
+        <MappingFragment StoreEntitySet="and_material_tbl">
+          <ScalarProperty Name="pk_material_id" ColumnName="pk_material_id" />
+          <ScalarProperty Name="fk_email_id" ColumnName="fk_email_id" />
+          <ScalarProperty Name="material_name" ColumnName="material_name" />
+          <ScalarProperty Name="material_path" ColumnName="material_path" />
+          <ScalarProperty Name="material_date" ColumnName="material_date" />
+          <ScalarProperty Name="type_of_material" ColumnName="type_of_material" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="and_news_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_news_tbl">
+        <MappingFragment StoreEntitySet="and_news_tbl">
+          <ScalarProperty Name="pk_news_id" ColumnName="pk_news_id" />
+          <ScalarProperty Name="news_title" ColumnName="news_title" />
+          <ScalarProperty Name="news_desc" ColumnName="news_desc" />
+          <ScalarProperty Name="news_image" ColumnName="news_image" />
+          <ScalarProperty Name="news_date" ColumnName="news_date" />
+          <ScalarProperty Name="news_isactive" ColumnName="news_isactive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="and_our_work_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_our_work_tbl">
+        <MappingFragment StoreEntitySet="and_our_work_tbl">
+          <ScalarProperty Name="pk_our_work_id" ColumnName="pk_our_work_id" />
+          <ScalarProperty Name="our_work_image" ColumnName="our_work_image" />
+          <ScalarProperty Name="project_name" ColumnName="project_name" />
+          <ScalarProperty Name="project_desc" ColumnName="project_desc" />
+          <ScalarProperty Name="team_size" ColumnName="team_size" />
+          <ScalarProperty Name="members_name" ColumnName="members_name" />
+          <ScalarProperty Name="days_to_complete" ColumnName="days_to_complete" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="link" ColumnName="link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="and_question_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_question_tbl">
+        <MappingFragment StoreEntitySet="and_question_tbl">
+          <ScalarProperty Name="pk_que_id" ColumnName="pk_que_id" />
+          <ScalarProperty Name="que_title" ColumnName="que_title" />
+          <ScalarProperty Name="que_desc" ColumnName="que_desc" />
+          <ScalarProperty Name="que_img" ColumnName="que_img" />
+          <ScalarProperty Name="fk_email_id" ColumnName="fk_email_id" />
+          <ScalarProperty Name="fk_grp_id" ColumnName="fk_grp_id" />
+          <ScalarProperty Name="que_date" ColumnName="que_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="and_testimonials_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_testimonials_tbl">
+        <MappingFragment StoreEntitySet="and_testimonials_tbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="fk_email_id" ColumnName="fk_email_id" />
+          <ScalarProperty Name="desc" ColumnName="desc" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="and_user_tbl">
+      <EntityTypeMapping TypeName="Database1Model.and_user_tbl">
+        <MappingFragment StoreEntitySet="and_user_tbl">
+          <ScalarProperty Name="pk_email_id" ColumnName="pk_email_id" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="phone_no" ColumnName="phone no" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="semester" ColumnName="semester" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

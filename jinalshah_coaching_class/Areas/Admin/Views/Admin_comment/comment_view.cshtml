@@ -1,0 +1,163 @@
+﻿@model  IEnumerable<jinalshah_coaching_class.Areas.Admin.Models.comment_admin>
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome-->
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Pace -->
+    @*<link href="css/pace.css" rel="stylesheet">*@
+
+    <!-- Datatable -->
+    <link href="~/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Endless -->
+    @*<link href="css/endless.min.css" rel="stylesheet">*@
+    <link href="~/css/endless-skin.css" rel="stylesheet" />
+    <script src="~/js/jquery-1.10.2.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Datatable -->
+    <script src='~/js/jquery.dataTables.min.js'></script>
+
+    <!-- Modernizr -->
+    <script src='~/js/modernizr.min.js'></script>
+
+    <!-- Pace -->
+    @*<script src='js/pace.min.js'></script>*@
+
+    <!-- Popup Overlay -->
+    <script src='~/js/jquery.popupoverlay.min.js'></script>
+
+    <!-- Slimscroll -->
+    <script src='~/js/jquery.slimscroll.min.js'></script>
+
+    <!-- Cookie -->
+    <script src='~/js/jquery.cookie.min.js'></script>
+    <!-- Endless -->
+    <script src="~/js/endless/endless.js"></script>
+
+    <script>
+        $(function () {
+            $('#dataTable').dataTable({
+                "bJQueryUI": true,
+                "sPaginationType": "full_numbers"
+            });
+
+            $('#chk-all').click(function () {
+                if ($(this).is(':checked')) {
+                    $('#responsiveTable').find('.chk-row').each(function () {
+                        $(this).prop('checked', true);
+                        $(this).parent().parent().parent().addClass('selected');
+                    });
+                }
+                else {
+                    $('#responsiveTable').find('.chk-row').each(function () {
+                        $(this).prop('checked', false);
+                        $(this).parent().parent().parent().removeClass('selected');
+                    });
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        //Select/Deselect all checkboxs in the grid
+       
+            $("#allBox").click(function () {
+                if ($("#allBox").is(":checked") == true) {
+                    $(".box").attr("checked", $(this).attr("checked") ? true : true);
+                }
+                else {
+                    $(".box").attr("checked", $(this).attr("checked") ? true : false);
+                }
+            });
+        
+    </script>
+
+
+@using (Html.BeginForm("DeleteAll", "Admin_comment", FormMethod.Post))
+{
+  <div class="panel panel-default table-responsive">
+    <div class="panel-heading">
+  
+        <span class="label label-info pull-right">@Session["count"] Items</span>
+    </div>
+    <div class="padding-md clearfix">
+        <table class="table table-striped" id="dataTable">
+            <thead>
+                <tr style="background-color:lightgray">
+                    <th>Select</th>
+                    <th>
+                        @Html.DisplayName("Subject")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Name")
+                    </th>
+
+                    <th>
+                          @Html.DisplayName("Comment")
+                    </th>
+                     <th>
+                          @Html.DisplayName("Date")
+                    </th>
+                    <th>Action</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+             
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                   
+                    <tr>
+                        <td>
+                            <input class="box" id="assignChkBx" name="assignChkBx" type="checkbox" value="@item.pk_comment_id" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.subject)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.fname)
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.comment)</td>
+                        <td>
+                             @{
+                                DateTime dt=Convert.ToDateTime(item.cmt_date);
+                                string s = dt.ToShortDateString();
+                             }
+                            @s
+                          </td>
+                        <td>
+                            @Html.ActionLink("All Comments", "blog_detail", new { id=item.pk_blog_id})
+                        </td>
+                        <td>
+                           
+                            @Html.ActionLink("Delete", "Delete", new { id=item.pk_comment_id})
+
+                        </td>
+
+                    </tr>
+                }
+                 
+            </tbody>
+        </table>
+        </div><!-- /.padding-md -->
+    <input type="submit" value="DeleteAll" />
+    
+</div>  
+    
+}
+
+
+
+
+

@@ -1,0 +1,64 @@
+﻿@model PagedList.IPagedList<jinalshah_coaching_class.Models.testimonial_visitor>
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "testimonial_view_add_visitor";
+    Layout = "~/Views/Shared/_master1_visitor.cshtml";
+}
+
+ <script type="text/javascript">
+       $(document).ready(function () {
+           $("#msg").click(function () {
+               alert("Please Login to Add Testimonial");
+           });
+       });
+</script> 
+                               
+								<h4 class="headline">
+									Testimonials (@Model.Count)
+									<span class="line"></span>
+								</h4>
+                               
+                        @foreach (var item in Model)
+                        {
+                    <article class="news-item page-row has-divider clearfix row">       
+                                <figure class="thumb col-md-2 col-sm-3 col-xs-4">
+                                    @if(item.photo!=null)
+                                    {
+                                    <img class="img-responsive" src="@Url.Content(@item.photo)" alt="" />
+                                    }
+                                </figure>
+                                     <div class="details col-md-10 col-sm-9 col-xs-8">
+                                    <h6 class="title" style="color:#6091BA"><label>@item.fname</label></h6>
+                                    <p>@item.desc</p>
+                                    <small class="text-muted"> on @item.date</small>
+                                    
+                                </div>
+                                
+                            </article><!--//news-item-->
+}	
+<div>
+                     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                     @Html.PagedListPager(Model, Page_No => Url.Action("testimonial_view_add_visitor",
+                    new { Page_No }))
+
+</div>
+                
+
+ 
+								<h4 class="headline">
+									Write something About us
+									<span class="line"></span>
+								</h4>
+								<form>
+									<textarea class="form-control" rows="10" name="desc"></textarea>
+									<div class="seperator"></div>
+									<br />
+                                    <div class="text-right m-bottom-md">
+                                     <button  class="btn btn-theme read-more" id="msg">Post</button>
+									</div>
+                                  
+                                    
+								</form>
+                                

@@ -1,0 +1,104 @@
+﻿@model jinalshah_coaching_class.Models.user_visitor
+@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/_login1_master.cshtml";
+}
+
+@section Scripts{
+     @Scripts.Render("bundles/jquery")
+    @Scripts.Render("bundles/jqueryval")
+}
+
+
+
+ <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Font Awesome -->
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	
+	<!-- Endless -->
+	@*<link href="css/endless.min.css" rel="stylesheet">*@
+
+ <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <!-- Jquery -->
+	<script src="js/jquery-1.10.2.min.js"></script>
+    
+    <!-- Bootstrap -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+   
+	<!-- Modernizr -->
+	<script src='js/modernizr.min.js'></script>
+   
+    <!-- Pace -->
+	<script src='js/pace.min.js'></script>
+   
+    <!-- Popup Overlay -->
+	<script src='js/jquery.popupoverlay.min.js'></script>
+   
+    <!-- Slimscroll -->
+	<script src='js/jquery.slimscroll.min.js'></script>
+   
+	<!-- Cookie -->
+	<script src='js/jquery.cookie.min.js'></script>
+
+	<!-- Endless -->
+	@*<script src="js/endless/endless.js"></script>*@
+
+@using (Html.BeginForm("login_insert", "Visitor_user", FormMethod.Post))
+{
+
+
+<div class="login-wrapper">
+		
+		<div class="login-widget animation-delay1">	
+			<div class="panel panel-default">
+				<div class="panel-heading clearfix">
+					<div class="pull-left">
+						<i class="fa fa-lock fa-lg"></i> Login
+					</div>
+
+				</div>
+				<div class="panel-body">
+					<form class="form-login">
+						<div class="form-group">
+
+							<label>Username</label>
+							<input type="email"  required placeholder="Username" name="email" class="form-control input-sm bounceIn animation-delay2" >
+						</div>
+						<div class="form-group">
+							<label>Password</label>
+							<input type="password" required placeholder="Password" name="pwd" class="form-control input-sm bounceIn animation-delay4">
+						</div>
+						
+		
+						<div class="seperator"></div>
+						<div class="form-group">
+							<b>Forgot</b> your password?<br/>
+							Click <a href="@Url.Action("for_pwd","Visitor_user")">here</a> to recover your password
+						</div>
+                        <div class="seperator"></div>
+						<div class="form-group">
+							Not a member yet?<br/>
+							<b>Sign Up</b><a href="@Url.Action("sign_up","Visitor_user")"> here</a> to Join Us
+						</div>
+
+						<hr/>
+                        <span style="color:red">@ViewBag.err</span>
+                        <span style="color:red">@ViewBag.err1</span>
+						 <div class="controls text-right">
+                                      <h3><i class="fa fa-sign-in" style="color:#6091ba">
+                                        <button type="submit" class="btn btn-theme">Sign in</button>
+                                        </i></h3>
+                        
+                        </div>
+					</form>
+				</div>
+			</div><!-- /panel -->
+		</div><!-- /login-widget -->
+	</div><!-- /login-wrapper -->
+
+}

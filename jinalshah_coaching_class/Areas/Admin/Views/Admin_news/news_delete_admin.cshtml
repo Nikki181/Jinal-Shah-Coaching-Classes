@@ -1,0 +1,55 @@
+﻿@model jinalshah_coaching_class.Areas.Admin.Models.news_admin
+
+@{
+    ViewBag.Title = "news_delete_admin";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+<h2>news_delete_admin</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>news_admin</legend>
+
+   
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.news_title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.news_title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.news_desc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.news_desc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.news_image)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.news_image)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.news_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.news_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.news_isactive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.news_isactive)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

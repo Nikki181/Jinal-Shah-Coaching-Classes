@@ -1,0 +1,127 @@
+﻿@model PagedList.IPagedList<jinalshah_coaching_class.Models.event_visitor>
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    
+    ViewBag.Title = "event_list_visitor";
+    Layout = "~/Views/Shared/_master1_visitor.cshtml";
+}
+
+
+<header class="page-heading clearfix">
+                    <h1 class="heading-title pull-left"> Question List</h1>
+                   
+         </header>  
+
+
+<div>
+   
+ <article class="events-item page-row has-divider clearfix">
+                               <!--//date-label-wrapper-->
+                                <div class="details col-md-11 col-sm-10">
+                                    <h3 class="title">How do we check if the file has reached its end ?</h3>
+                                    
+							         <input name="txtgen"  type="radio" >Use if_file_end()
+                                     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input name="txtgen"  type="radio">use end_of_file()  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input name="txtgen"  type="radio">use eof()
+                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                    <input name="txtgen"  type="radio">both a and c
+                                    <br /><br />
+                                    <label for="name">Correct Answer</label>&nbsp;&nbsp;&nbsp;use eof()	
+
+                                    
+                                    @*<p class="desc"></p>*@                       
+                                </div><!--//details-->
+                            </article><!--//events-item-->
+     <article class="events-item page-row has-divider clearfix">
+                                <!--//date-label-wrapper-->
+                                <div class="details col-md-11 col-sm-10">
+                                    <h3 class="title">If a class x needs to be derived from a class y,which of the following way is correct to do so?</h3>
+                                    
+							         <input name="txtgen"  type="radio" >class x : public y
+                                     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input name="txtgen"  type="radio">class y : public x  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input name="txtgen"  type="radio">class x derives public y
+                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                    <input name="txtgen"  type="radio">class y derives public x
+                                    <br /><br />
+                                    <label for="name">Correct Answer</label>&nbsp;&nbsp;&nbsp;&nbsp;class y : public x
+
+                                    
+                                    @*<p class="desc"></p>*@                       
+                                </div><!--//details-->
+                            </article><!--//events-item-->
+      <article class="events-item page-row has-divider clearfix">
+                                <!--//date-label-wrapper-->
+                                <div class="details col-md-11 col-sm-10">
+                                    <h3 class="title">By default,all members of a class have ____ access for all its members?</h3>
+                                    
+							         <input name="txtgen"  type="radio" >Public
+                                     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input name="txtgen"  type="radio">Protected  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input name="txtgen"  type="radio">No Access
+                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                    <input name="txtgen"  type="radio">Private
+                                    <br /><br />
+                                    <label for="name">Correct Answer</label>&nbsp;&nbsp;&nbsp;&nbsp;Private
+
+                                    
+                                    @*<p class="desc"></p>*@                       
+                                </div><!--//details-->
+                            </article><!--//events-item-->
+        <article class="events-item page-row has-divider clearfix">
+                                <!--//date-label-wrapper-->
+                                <div class="details col-md-11 col-sm-10">
+                                    <h3 class="title">#if or #elif can be used to evaluate ?</h3>
+                                    
+							         <input name="txtgen"  type="radio" >Constant expressions
+                                     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input name="txtgen"  type="radio">Macro expressions	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input name="txtgen"  type="radio">Both a and b	
+                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                    <input name="txtgen"  type="radio">All expressions	
+                                    <br /><br />
+                                    <label for="name">Correct Answer</label>&nbsp;&nbsp;&nbsp;&nbsp;Both a and b	
+
+                                    
+                                    @*<p class="desc"></p>*@                       
+                                </div><!--//details-->
+                            </article><!--//events-item-->
+        <article class="events-item page-row has-divider clearfix">
+                                <!--//date-label-wrapper-->
+                                <div class="details col-md-11 col-sm-10">
+                                    <h3 class="title">Under what conditions a destructor destroys an object ?</h3>
+                                    
+							         <input name="txtgen"  type="radio" >Scope of existence has finished
+                                     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input name="txtgen"  type="radio">Object dynamically assigned and it is released using the operator delete. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input name="txtgen"  type="radio">Program terminated.
+                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                    <input name="txtgen"  type="radio">Both a and b.
+                                    <br /><br />
+                                    <label for="name">Correct Answer</label>&nbsp;&nbsp;&nbsp;&nbsp;Both a and b.
+
+                                    
+                                    @*<p class="desc"></p>*@                       
+                                </div><!--//details-->
+                            </article><!--//events-item-->
+        <article class="events-item page-row has-divider clearfix">
+                                <!--//date-label-wrapper-->
+                                <div class="details col-md-11 col-sm-10">
+                                    <h3 class="title">Which operator is used to define a member of a class from outside the class defination itself ?</h3>
+                                    
+							         <input name="txtgen"  type="radio" >::
+                                     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input name="txtgen"  type="radio">: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input name="txtgen"  type="radio">>>
+                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                    <input name="txtgen"  type="radio"><<
+                                    <br /><br />
+                                    <label for="name">Correct Answer</label>&nbsp;&nbsp;&nbsp;&nbsp;::
+
+                                    
+                                    @*<p class="desc"></p>*@                       
+                                </div><!--//details-->
+                            </article><!--//events-item-->
+        
+<div>
+                    <img  src="~/Images/Screenshot.png" class="img-responsive" />
+
+</div>                                     
+    </div>

@@ -1,0 +1,252 @@
+﻿@model jinalshah_coaching_class.Areas.User_data.Models.Blog
+
+@{
+    ViewBag.Title = "View1";
+    Layout = "~/Areas/User_data/Views/Shared/_master1.cshtml";
+}
+@section Scripts{
+
+       @Scripts.Render("bundles/jquery")
+    @Scripts.Render("bundles/jqueryval")
+
+  @* <link href="~/css/endless.min.css" rel="stylesheet">*@
+	<link href="~/css/endless-skin.css" rel="stylesheet">
+	<!-- Color box -->
+	<link href="~/css/colorbox/colorbox.css" rel="stylesheet">
+
+	<!-- Endless -->
+	
+    <!-- Colorbox -->
+	<script src='~/js/jquery.colorbox.min.js'></script>	
+	
+    <!-- Endless -->
+	<script src="~/js/endless/endless.js"></script>
+        <link href="~/css/Blog.css" rel="stylesheet" />
+
+<link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="~/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Pace -->
+@*<link href="~/css/pace.css" rel="stylesheet">*@
+
+<!-- Chosen -->
+<link href="~/css/chosen/chosen.min.css" rel="stylesheet" />
+
+<!-- Datepicker -->
+<link href="~/css/datepicker.css" rel="stylesheet" />
+
+<!-- Timepicker -->
+<link href="~/css/bootstrap-timepicker.css" rel="stylesheet" />
+
+<!-- Slider -->
+<link href="~/css/slider.css" rel="stylesheet" />
+
+<!-- Tag input -->
+<link href="~/css/jquery.tagsinput.css" rel="stylesheet" />
+
+<!-- WYSIHTML5 -->
+<link href="~/css/bootstrap-wysihtml5.css" rel="stylesheet" />
+
+<!-- Dropzone -->
+<link href='~/css/dropzone/dropzone.css' rel="stylesheet" />
+
+<!-- Endless -->
+@*<link href="~/css/endless.min.css" rel="stylesheet">*@
+<link href="~/css/endless-skin.css" rel="stylesheet">
+<!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<!-- Jquery -->
+<script src="~/js/jquery-1.10.2.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Chosen -->
+<script src='~/js/chosen.jquery.min.js'></script>
+
+<!-- Mask-input -->
+<script src='~/js/jquery.maskedinput.min.js'></script>
+
+<!-- Datepicker -->
+<script src='~/js/bootstrap-datepicker.min.js'></script>
+
+<!-- Timepicker -->
+<script src='~/js/bootstrap-timepicker.min.js'></script>
+
+<!-- Slider -->
+<script src='~/js/bootstrap-slider.min.js'></script>
+
+<!-- Tag input -->
+<script src='~/js/jquery.tagsinput.min.js'></script>
+
+<!-- WYSIHTML5 -->
+<script src='~/js/wysihtml5-0.3.0.min.js'></script>
+<script src='~/js/uncompressed/bootstrap-wysihtml5.js'></script>
+
+<!-- Dropzone -->
+<script src='~/js/dropzone.min.js'></script>
+
+<!-- Modernizr -->
+<script src='~/js/modernizr.min.js'></script>
+
+<!-- Pace -->
+@*<script src='~/js/pace.min.js'></script>*@
+
+<!-- Popup Overlay -->
+<script src='~/js/jquery.popupoverlay.min.js'></script>
+
+<!-- Slimscroll -->
+<script src='~/js/jquery.slimscroll.min.js'></script>
+
+<!-- Cookie -->
+<script src='~/js/jquery.cookie.min.js'></script>
+
+<!-- Endless -->
+<script src="~/js/endless/endless_form.js"></script>
+
+	<script>
+	    $(function () {
+	        //Colorbox 
+	        $('.image-zoom').colorbox({
+	            maxWidth: '90%',
+	            width: '800px'
+	        });
+	    });
+	</script>	
+}
+
+<div id="wrapper" class="preload">
+		<div id="main-container">
+			<div class="padding-md">
+				<div class="row">
+					<div class="col-md-11">	
+						<h3 class="headline m-top-md">
+							<i>	Welcome To Our Blog </i>
+							<span class="line"></span>
+						</h3>
+						<div class="row">	
+							<div>
+								<div class="panel blog-container">
+									<div class="panel-body">
+										
+										<small class="text-muted">By <a href="#"><strong>@ViewBag.fname</strong></a> | @Model.blog_date_  | @ViewBag.cmt comments</small>
+										<div class="seperator"></div>
+										<div class="seperator"></div>
+										<br />
+										<div class="image-wrapper">
+											<a class="image-wrapper image-zoom"  href="@Url.Content(Model.blog_image)">
+												<img src="@Url.Content(Model.blog_image)" class="img-responsive"  alt="Photo of Blog">
+												<div class="image-overlay"></div>	
+											</a>
+										</div><!-- /image-wrapper -->
+
+										@*<p class="m-top-sm m-bottom-sm">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eros nibh, viverra a dui a, gravida varius velit. Nunc vel tempor nisi. Aenean id pellentesque mi, non placerat mi. Integer luctus accumsan tellus. Vivamus quis elit sit amet nibh lacinia suscipit eu quis purus. Vivamus tristique est non ipsum dapibus lacinia sed nec metus.
+										</p>*@
+										<blockquote>
+											<p>@Model.subject</p>
+											
+										</blockquote>
+										<p class="m-top-sm m-bottom-sm">
+										
+                                               @Html.Raw(Model.blog_desc)
+           
+                                            
+										</p>
+										
+										@*<div class="m-top-sm">
+											<a href="#" class="btn btn-sm btn-success">Previous</a>
+											<a href="#" class="btn btn-sm btn-success pull-right">Next Post</a>
+										</div>*@
+									</div>
+								</div><!-- /panel -->
+								
+                               @{
+                                   List<jinalshah_coaching_class.Areas.User_data.Models.comment_model> str = new List<jinalshah_coaching_class.Areas.User_data.Models.comment_model>();
+                                   str = ViewBag.comment;
+
+                                   string id = Convert.ToString(Session["email-id"]);
+                               }
+
+                               
+								<h4 class="headline">
+									Comments (@str.Count)
+									<span class="line"></span>
+								</h4>
+                                @foreach (var item in str)
+                                {
+								<ul class="media-list comment-list">
+									<li class="media">
+										<a class="pull-left" href="#">
+											<img class="media-object img-circle" src="@Url.Content(@item.photo)" alt="User Avatar" style="width: 40px; height: 40px;">
+										</a>
+										<div class="media-body">
+											<div class="media-heading">
+												<a href="#">@item.fname</a>
+												<small class="text-muted">
+													@item.cmt_date 
+												</small>
+											</div>
+                                          
+                                          <p>@Html.Raw(item.comment)</p>
+										   @if(item.fk_email_id==id)
+                                            {
+                                                 @Html.ActionLink("Delete", "Delete", new {id=item.pk_comment_id})
+                                            }
+											
+											<!-- Nested media object -->
+											
+										</div>
+									</li>
+                                </ul><!-- /media-list -->	
+                                }			
+                                
+	                               @using (Html.BeginForm("add_comment", "Blog"))
+                                {
+                                 @Html.ValidationSummary(true)
+    
+								<h4 class="headline">
+									Add Comment
+									<span class="line"></span>
+								</h4>
+							
+								<form id="formToggleLine" class="form-horizontal no-margin form-border">
+                                  <div class="form-group">
+                                	<div class="col-lg-10">
+									<textarea id="wysihtml5-textarea" name="comment"  placeholder="Enter your text ..." class="form-control" rows="6"></textarea>					
+								  </div><!-- /.col -->
+                                </div>
+                                <span id="spn" style="color:red"></span> 
+                                <br /><br /><br /><br /><br /><br /><br /><br /><br />
+									<div class="seperator"></div>
+									<div>
+										<button class="btn btn-theme" type="submit">Post Comment</button>
+									</div>
+								</form>
+                               }
+							</div><!-- /.col -->
+							
+						</div><!-- /.row -->
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.padding-md -->
+		</div><!-- /main-container -->
+	</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#sub").click(function () {
+
+            if ($("#wysihtml5-textarea").val() == "") {
+                $("#spn").html("Please Add Description");
+            }
+
+            return false;
+        });
+
+    });
+</script>

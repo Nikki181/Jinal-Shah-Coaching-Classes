@@ -1,0 +1,146 @@
+﻿@model jinalshah_coaching_class.Areas.Admin.Models.faq_admin
+
+@{
+    ViewBag.Title = "add_faq_admin";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+
+@section Scripts{
+
+
+     @Scripts.Render("bundles/jquery")
+    @Scripts.Render("bundles/jqueryval")
+}
+
+
+<link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="~/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Pace -->
+<link href="~/css/pace.css" rel="stylesheet">
+
+<!-- Chosen -->
+<link href="~/css/chosen/chosen.min.css" rel="stylesheet" />
+
+<!-- Datepicker -->
+<link href="~/css/datepicker.css" rel="stylesheet" />
+
+<!-- Timepicker -->
+<link href="~/css/bootstrap-timepicker.css" rel="stylesheet" />
+
+<!-- Slider -->
+<link href="~/css/slider.css" rel="stylesheet" />
+
+<!-- Tag input -->
+<link href="~/css/jquery.tagsinput.css" rel="stylesheet" />
+
+<!-- WYSIHTML5 -->
+<link href="~/css/bootstrap-wysihtml5.css" rel="stylesheet" />
+
+<!-- Dropzone -->
+<link href='~/css/dropzone/dropzone.css' rel="stylesheet" />
+
+<!-- Endless -->
+@*<link href="~/css/endless.min.css" rel="stylesheet">*@
+<link href="~/css/endless-skin.css" rel="stylesheet">
+<!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<!-- Jquery -->
+<script src="~/js/jquery-1.10.2.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Chosen -->
+<script src='~/js/chosen.jquery.min.js'></script>
+
+<!-- Mask-input -->
+<script src='~/js/jquery.maskedinput.min.js'></script>
+
+<!-- Datepicker -->
+<script src='~/js/bootstrap-datepicker.min.js'></script>
+
+<!-- Timepicker -->
+<script src='~/js/bootstrap-timepicker.min.js'></script>
+
+<!-- Slider -->
+<script src='~/js/bootstrap-slider.min.js'></script>
+
+<!-- Tag input -->
+<script src='~/js/jquery.tagsinput.min.js'></script>
+
+<!-- WYSIHTML5 -->
+<script src='~/js/wysihtml5-0.3.0.min.js'></script>
+<script src='~/js/uncompressed/bootstrap-wysihtml5.js'></script>
+
+<!-- Dropzone -->
+<script src='~/js/dropzone.min.js'></script>
+
+<!-- Modernizr -->
+<script src='~/js/modernizr.min.js'></script>
+
+<!-- Pace -->
+<script src='~/js/pace.min.js'></script>
+
+<!-- Popup Overlay -->
+<script src='~/js/jquery.popupoverlay.min.js'></script>
+
+<!-- Slimscroll -->
+<script src='~/js/jquery.slimscroll.min.js'></script>
+
+<!-- Cookie -->
+<script src='~/js/jquery.cookie.min.js'></script>
+
+<!-- Endless -->
+<script src="~/js/endless/endless_form.js"></script>
+
+
+@using (Html.BeginForm("add_faq1", "Admin_faq", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title"><i>Add Faculty</i></h4>
+                                        </div>
+                                        <div class="panel-body">
+    
+                                      <div class="form-group">
+                                    <label for="name">First Name</label>
+                                    <input id="txtsub" name="txtsub" type="text" class="form-control input-sm"  required placeholder="Enter First Name">
+                                </div><!--//form-group-->
+                    
+                              <div class="form-group">
+                                    <label for="name">Last Name</label>
+                                    <input id="txtsub" name="txtsub" type="text" class="form-control input-sm" required placeholder="Enter Last Name">
+                                </div>
+                                             <div class="form-group">
+                                    <label for="name">Email-Id</label>
+                                    <input id="txtsub" name="txtsub" type="text" class="form-control input-sm" required placeholder="Enter Email-Id">
+                                </div>
+                                            @* <div class="form-group">
+                                    <label for="name">Password</label>
+                                    <input id="txtsub" name="txtsub" type="text" class="form-control input-sm" required placeholder="Enter Password">
+                                </div>*@
+                                             <div class="form-group">
+                                    <label for="name">Degree</label>
+                                    <input id="txtsub" name="txtsub" type="text" class="form-control input-sm" required placeholder="Enter Degree name">
+                                </div>
+                                            <div class="form-group">
+                                    <label for="name">Assign Subjects</label>
+                                    <input id="txtsub" name="txtsub" type="text" class="form-control input-sm"  required placeholder="Enter subject names you want to assign">
+                                </div>
+     
+                                 <div class="form-group">
+                                           <h3><i class="fa fa-upload " style="color:#6091ba">
+                                       <input type="submit" value="Add Faculty" class="btn btn-theme"  name="Save"/>
+                                        </i>
+                                       </h3>
+                                </div>
+                                            </div>
+        </div>
+}

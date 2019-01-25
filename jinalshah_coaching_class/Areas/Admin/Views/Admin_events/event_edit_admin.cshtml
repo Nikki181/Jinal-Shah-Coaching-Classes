@@ -1,0 +1,179 @@
+﻿@model jinalshah_coaching_class.Areas.Admin.Models.events_admin
+
+@{
+    ViewBag.Title = "event_edit_admin";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+<link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="~/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Pace -->
+<link href="~/css/pace.css" rel="stylesheet">
+
+<!-- Chosen -->
+<link href="~/css/chosen/chosen.min.css" rel="stylesheet" />
+
+<!-- Datepicker -->
+<link href="~/css/datepicker.css" rel="stylesheet" />
+
+<!-- Timepicker -->
+<link href="~/css/bootstrap-timepicker.css" rel="stylesheet" />
+
+<!-- Slider -->
+<link href="~/css/slider.css" rel="stylesheet" />
+
+<!-- Tag input -->
+<link href="~/css/jquery.tagsinput.css" rel="stylesheet" />
+
+<!-- WYSIHTML5 -->
+<link href="~/css/bootstrap-wysihtml5.css" rel="stylesheet" />
+
+<!-- Dropzone -->
+<link href='~/css/dropzone/dropzone.css' rel="stylesheet" />
+
+<!-- Endless -->
+@*<link href="~/css/endless.min.css" rel="stylesheet">*@
+<link href="~/css/endless-skin.css" rel="stylesheet">
+<!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<!-- Jquery -->
+<script src="~/js/jquery-1.10.2.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Chosen -->
+<script src='~/js/chosen.jquery.min.js'></script>
+
+<!-- Mask-input -->
+<script src='~/js/jquery.maskedinput.min.js'></script>
+
+<!-- Datepicker -->
+<script src='~/js/bootstrap-datepicker.min.js'></script>
+
+<!-- Timepicker -->
+<script src='~/js/bootstrap-timepicker.min.js'></script>
+
+<!-- Slider -->
+<script src='~/js/bootstrap-slider.min.js'></script>
+
+<!-- Tag input -->
+<script src='~/js/jquery.tagsinput.min.js'></script>
+
+<!-- WYSIHTML5 -->
+<script src='~/js/wysihtml5-0.3.0.min.js'></script>
+<script src='~/js/uncompressed/bootstrap-wysihtml5.js'></script>
+
+<!-- Dropzone -->
+<script src='~/js/dropzone.min.js'></script>
+
+<!-- Modernizr -->
+<script src='~/js/modernizr.min.js'></script>
+
+<!-- Pace -->
+<script src='~/js/pace.min.js'></script>
+
+<!-- Popup Overlay -->
+<script src='~/js/jquery.popupoverlay.min.js'></script>
+
+<!-- Slimscroll -->
+<script src='~/js/jquery.slimscroll.min.js'></script>
+
+<!-- Cookie -->
+<script src='~/js/jquery.cookie.min.js'></script>
+
+<!-- Endless -->
+<script src="~/js/endless/endless_form.js"></script>
+
+
+@using (Html.BeginForm("event_edit","Admin_events",FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Event Edit</legend>
+
+        
+
+        <div class="editor-label">
+            @Html.Label("Event Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.event_name)
+            @Html.ValidationMessageFor(model => model.event_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Event Description")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.event_desc)
+            @Html.ValidationMessageFor(model => model.event_desc)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Event Place")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.event_place)
+            @Html.ValidationMessageFor(model => model.event_place)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Speaker")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.speaker)
+            @Html.ValidationMessageFor(model => model.speaker)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Event Topic")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.topic)
+            @Html.ValidationMessageFor(model => model.topic)
+        </div>
+
+        <div class="editor-field">
+            <label for="name">Image</label>
+            <input  type="file" name="fileuploadDemo"  id="fileupld" class="form-control input-sm" />
+        </div>
+
+       
+           <div class="from-group">
+                                <label class="col-lg-2 control-label">Event Date</label>
+								<div class="col-lg-10">
+									<div class="input-group">
+										<input value="@Model.event_date" class="datepicker form-control" name="event_date" type="text">
+										<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+									</div>
+								</div><!-- /.col -->
+							</div>
+
+        <div class="from-group">
+                                <label class="col-lg-2 control-label">Event Time</label>
+								<div class="col-lg-10">
+									<div class="input-group bootstrap-timepicker"><div class="bootstrap-timepicker-widget dropdown-menu"><table><tbody><tr><td><a href="#" data-action="incrementhour"><i class="icon-chevron-up"></i></a></td><td class="separator">&nbsp;</td><td><a href="#" data-action="incrementminute"><i class="icon-chevron-up"></i></a></td><td class="separator">&nbsp;</td><td class="meridian-column"><a href="#" data-action="togglemeridian"><i class="icon-chevron-up"></i></a></td></tr><tr><td><input name="hour" class="bootstrap-timepicker-hour" maxlength="2" type="text"></td> <td class="separator">:</td><td><input name="minute" class="bootstrap-timepicker-minute" maxlength="2" type="text"></td> <td class="separator">&nbsp;</td><td><input name="meridian" class="bootstrap-timepicker-meridian" maxlength="2" type="text"></td></tr><tr><td><a href="#" data-action="decrementhour"><i class="icon-chevron-down"></i></a></td><td class="separator"></td><td><a href="#" data-action="decrementminute"><i class="icon-chevron-down"></i></a></td><td class="separator">&nbsp;</td><td><a href="#" data-action="togglemeridian"><i class="icon-chevron-down"></i></a></td></tr></tbody></table></div>
+										<input class="timepicker form-control" type="text" value="@Model.event_time" name="event_time">
+										<span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+									</div>
+								</div><!-- /.col -->
+							</div>     
+
+        <p>
+            <input type="submit" class="btn btn-theme" value="Save" />
+        </p>
+    </fieldset>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

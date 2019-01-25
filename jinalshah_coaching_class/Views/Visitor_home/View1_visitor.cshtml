@@ -1,0 +1,57 @@
+﻿@model jinalshah_coaching_class.Models.news_visitor
+@{
+    ViewBag.Title = "View1_visitor";
+    Layout = "~/Views/Shared/_master1_visitor.cshtml";
+}
+
+
+<fieldset>
+    <legend>news</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pk_news_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pk_news_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.news_title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.news_title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.news_desc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.news_desc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.news_image)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.news_image)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.news_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.news_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.news_isactive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.news_isactive)
+    </div>
+</fieldset>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

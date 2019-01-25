@@ -1,0 +1,146 @@
+﻿@model IEnumerable<jinalshah_coaching_class.Areas.Admin.Models.question_admin>
+
+@{
+        ViewBag.Title = "view_que_admin";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+
+ <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome-->
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Pace -->
+    @*<link href="css/pace.css" rel="stylesheet">*@
+
+    <!-- Datatable -->
+    <link href="~/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    
+    <!-- Endless -->
+    @*<link href="~/css/endless.min.css" rel="stylesheet">*@
+    <link href="~/css/endless-skin.css" rel="stylesheet">
+ 
+    <script src="~/js/jquery-1.10.2.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Datatable -->
+    <script src='~/js/jquery.dataTables.min.js'></script>
+
+    <!-- Modernizr -->
+    <script src='~/js/modernizr.min.js'></script>
+
+    <!-- Pace -->
+    @*<script src='~/js/pace.min.js'></script>*@
+
+    <!-- Popup Overlay -->
+    <script src='~/js/jquery.popupoverlay.min.js'></script>
+
+    <!-- Slimscroll -->
+    <script src='~/js/jquery.slimscroll.min.js'></script>
+
+    <!-- Cookie -->
+    <script src='~/js/jquery.cookie.min.js'></script>
+    <!-- Endless -->
+    <script src="~/js/endless/endless.js"></script>
+
+    <script>
+        $(function () {
+            $('#dataTable').dataTable({
+                "bJQueryUI": true,
+                "sPaginationType": "full_numbers"
+            });
+
+            $('#chk-all').click(function () {
+                if ($(this).is(':checked')) {
+                    $('#responsiveTable').find('.chk-row').each(function () {
+                        $(this).prop('checked', true);
+                        $(this).parent().parent().parent().addClass('selected');
+                    });
+                }
+                else {
+                    $('#responsiveTable').find('.chk-row').each(function () {
+                        $(this).prop('checked', false);
+                        $(this).parent().parent().parent().removeClass('selected');
+                    });
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        //Select/Deselect all checkboxs in the grid
+
+        $("#allBox").click(function () {
+            if ($("#allBox").is(":checked") == true) {
+                $(".box").attr("checked", $(this).attr("checked") ? true : true);
+            }
+            else {
+                $(".box").attr("checked", $(this).attr("checked") ? true : false);
+            }
+        });
+
+    </script>
+
+
+
+@using (Html.BeginForm("insert_user", "Visitor_user", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <form name="form1" id="form1">
+                            
+                               
+                                <div class="form-group">
+                                    <label for="name">Question</label>
+                                    <input id="name" name="txtfnm" type="text" class="form-control input-sm" required placeholder="Enter your First name" value="A class can have how many objects ?">
+                                </div><!--//form-group-->
+
+                                <div class="form-group">
+                                    <label for="name">Option1</label>
+                                    <input  name="txtlnm" type="text" class="form-control input-sm" placeholder="Enter your Last name" value="one">
+                                </div><!--//form-group-->
+
+
+         <div class="form-group">
+                                    <label for="name">Option2</label>
+                                    <input  name="txtlnm" type="text" class="form-control input-sm" placeholder="Enter your Last name" value="Two">
+                                </div>
+
+         <div class="form-group">
+                                    <label for="name">Option3</label>
+                                    <input  name="txtlnm" type="text" class="form-control input-sm" placeholder="Enter your Last name" value="Three">
+                                </div>
+
+         <div class="form-group">
+                                    <label for="name">Option4</label>
+                                    <input  name="txtlnm" type="text" class="form-control input-sm" placeholder="Enter your Last name" value="No limit">
+                                </div>
+                               <div class="form-group">
+							    <label for="email">Correct Answer</label>
+							        <input name="txteid" type="email" required placeholder="Email address" class="form-control input-sm" value="No limit">
+						        </div><!-- /form-group -->
+
+                                 
+                                 
+                        
+                              
+
+                   <!-- /form-group -->
+                      
+
+                             
+
+						      <div class="controls text-left">
+                                     <h3><i class="fa fa-plus-circle" style="color:#6091ba">
+                                         <input type="submit" id="sub" class="btn btn-theme" value="Save" />
+                                       
+                                        </i></h3>
+                        
+							    </div>
+
+    </form> 
+    
+}    
+
+    	

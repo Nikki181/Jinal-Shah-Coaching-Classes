@@ -1,0 +1,160 @@
+﻿@model PagedList.IPagedList<jinalshah_coaching_class.Areas.User_data.Models.Blog>
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "blog_view";
+    Layout = "~/Areas/User_data/Views/Shared/_master1.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#clr").css("background-color", "#777");
+        return false;
+    });
+
+
+</script>
+    <!-- Bootstrap core CSS -->
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Font Awesome -->
+	<link href="~/css/font-awesome.min.css" rel="stylesheet">
+	
+	<!-- Pace -->
+	<link href="~/css/pace.css" rel="stylesheet">
+	
+	<!-- Color box -->
+	<link href="~/css/colorbox/colorbox.css" rel="stylesheet">
+
+	<!-- Endless -->
+	@*<link href="~/css/endless.min.css" rel="stylesheet">*@
+	<link href="~/css/endless-skin.css" rel="stylesheet" >
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	
+	<!-- Jquery -->
+	<script src="~/js/jquery-1.10.2.min.js"></script>
+	
+	<!-- Bootstrap -->
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+    
+	<!-- Colorbox -->
+	<script src="~/js/jquery.colorbox.min.js"></script>	
+	
+	<!-- Modernizr -->
+	<script src="js/modernizr.min.js"></script>
+	
+	<!-- Pace -->
+	<script src="~/js/pace.min.js"></script>
+	
+	<!-- Popup Overlay -->
+	<script src="~/js/jquery.popupoverlay.min.js"></script>
+	
+	<!-- Slimscroll -->
+	<script src="~/js/jquery.slimscroll.min.js"></script>
+	
+	<!-- Cookie -->
+	<script src="~/js/jquery.cookie.min.js"></script>
+
+	<!-- Endless -->
+	@*<script src="~/js/endless/endless.js"></script>*@
+	
+	<script>
+		$(function()	{
+			//Colorbox 
+			$('.image-zoom').colorbox({
+				maxWidth:'90%',
+				width:'800px'
+			});
+		});
+	</script>
+
+@using (Html.BeginForm("addview_load", "Blog", FormMethod.Post))
+{ 
+
+    	
+    <div id="main-container">
+			<div class="padding-md">
+				<div class="row">
+					<div class="col-md-11">	
+						<h3 class="headline m-top-md">
+						<i>	Welcome To Our Blog </i>
+							<span class="line"></span>
+						</h3>
+                			
+                         @foreach (var item in Model)
+                         {
+		 
+                              jinalshah_coaching_class.Entity_Model.Database1Entities db=new jinalshah_coaching_class.Entity_Model.Database1Entities();
+                              var cmt = (from c in db.and_comment_tbl
+                                         join b in db.and_blog_tbl on c.fk_blog_id equals b.pk_blog_id
+                                      where b.pk_blog_id==item.pk_blog_id
+                                      select c).ToList();
+                            
+						    <div class="row">	
+                            @*class="col-md-8"*@
+							<div >
+								<div class="panel blog-container">
+									<div class="panel-body">
+                                        <small class="text-muted">By <strong>@item.fname</strong>|  Post on @item.blog_date_  | @cmt.Count comments</small>
+                                      <div class="seperator"></div>
+										<div class="seperator"></div>
+										<br />
+										
+                                         @if (@item.blog_image != null)
+                                       {
+										<a class="image-wrapper image-zoom" href="@Url.Content(item.blog_image)">
+           								 <img src="@Url.Content(item.blog_image)" class="img-responsive"  alt="Photo of Blog" >
+											<div class="image-overlay"></div>	
+										</a>
+                                       }
+                                         else{
+                                        
+                                            <img src="~/Blog_image/q1.jpg" class="img-responsive"  alt="Photo of Blog" height="30" width="600"> 
+                                        }								
+										<h4>@item.subject</h4>
+										
+										<p class="m-top-sm m-bottom-sm">
+                                             @if (item.blog_desc.Length < 50)
+                                            { 
+                                               @Html.Raw(item.blog_desc)
+                                            }
+                                            else{
+											
+											 @Html.Raw(item.blog_desc.Substring(0,50))
+                                             }
+
+                                            
+										</p>
+										<a href="@Url.Action("blog_detail","Blog",new{id=@item.pk_blog_id})"><i class="fa fa-angle-double-right"></i> Continue reading</a>
+										
+									</div>
+								</div>
+                            </div>
+                            </div>
+								
+                         }	
+                         
+                        
+<div>
+                     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                     @Html.PagedListPager(Model, Page_No => Url.Action("blog_view",
+                    new { Page_No }))
+
+</div>
+</div><!-- /.col -->
+                 @*  <h4>
+        <a href="@Url.Action("addview_load","Blog")">
+            <i class="fa fa-plus-circle fa-lg">Add Blog</i>
+
+        </a></h4>*@
+						
+                            </div>
+                        </div>
+                    </div>
+ 
+}
+    

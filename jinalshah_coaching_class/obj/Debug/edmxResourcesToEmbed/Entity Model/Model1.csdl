@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Database1Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="and_album_tbl" EntityType="Database1Model.and_album_tbl" />
+    <EntitySet Name="and_answer_tbl" EntityType="Database1Model.and_answer_tbl" />
+    <EntitySet Name="and_blog_tbl" EntityType="Database1Model.and_blog_tbl" />
+    <EntitySet Name="and_comment_tbl" EntityType="Database1Model.and_comment_tbl" />
+    <EntitySet Name="and_event_tbl" EntityType="Database1Model.and_event_tbl" />
+    <EntitySet Name="and_faq_tbl" EntityType="Database1Model.and_faq_tbl" />
+    <EntitySet Name="and_gallery_tbl" EntityType="Database1Model.and_gallery_tbl" />
+    <EntitySet Name="and_material_tbl" EntityType="Database1Model.and_material_tbl" />
+    <EntitySet Name="and_news_tbl" EntityType="Database1Model.and_news_tbl" />
+    <EntitySet Name="and_our_work_tbl" EntityType="Database1Model.and_our_work_tbl" />
+    <EntitySet Name="and_question_tbl" EntityType="Database1Model.and_question_tbl" />
+    <EntitySet Name="and_testimonials_tbl" EntityType="Database1Model.and_testimonials_tbl" />
+    <EntitySet Name="and_user_tbl" EntityType="Database1Model.and_user_tbl" />
+  </EntityContainer>
+  <EntityType Name="and_album_tbl">
+    <Key>
+      <PropertyRef Name="pk_album_id" />
+    </Key>
+    <Property Name="pk_album_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="album_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="and_answer_tbl">
+    <Key>
+      <PropertyRef Name="pk_ans_id" />
+    </Key>
+    <Property Name="pk_ans_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_que_id" Type="Int32" Nullable="false" />
+    <Property Name="answer" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ans_img" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="fk_email_id" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="a_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="and_blog_tbl">
+    <Key>
+      <PropertyRef Name="pk_blog_id" />
+    </Key>
+    <Property Name="pk_blog_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="blog_desc" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="subject" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="fk_email_id" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="blog_image" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="blog_date_" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="and_comment_tbl">
+    <Key>
+      <PropertyRef Name="pk_comment_id" />
+    </Key>
+    <Property Name="pk_comment_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_blog_id" Type="Int32" Nullable="false" />
+    <Property Name="fk_email_id" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="comment" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="cmt_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="and_event_tbl">
+    <Key>
+      <PropertyRef Name="pk_event_id" />
+    </Key>
+    <Property Name="pk_event_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="event_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="event_desc" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="speaker" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="topic" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="event_img" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="event_date_" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="event_time" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="event_place" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="and_faq_tbl">
+    <Key>
+      <PropertyRef Name="pk_faq_id" />
+    </Key>
+    <Property Name="pk_faq_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="que" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ans" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="and_gallery_tbl">
+    <Key>
+      <PropertyRef Name="pk_gallery_id" />
+    </Key>
+    <Property Name="pk_gallery_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="gallery_image" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="fk_album_id" Type="Int32" Nullable="false" />
+    <Property Name="gallery_caption" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="location" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="and_material_tbl">
+    <Key>
+      <PropertyRef Name="pk_material_id" />
+    </Key>
+    <Property Name="pk_material_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_email_id" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="material_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="material_path" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="material_date" Type="DateTime" Precision="3" />
+    <Property Name="type_of_material" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="and_news_tbl">
+    <Key>
+      <PropertyRef Name="pk_news_id" />
+    </Key>
+    <Property Name="pk_news_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="news_title" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="news_desc" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="news_image" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="news_date" Type="DateTime" Precision="3" />
+    <Property Name="news_isactive" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="and_our_work_tbl">
+    <Key>
+      <PropertyRef Name="pk_our_work_id" />
+    </Key>
+    <Property Name="pk_our_work_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="our_work_image" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="project_name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="project_desc" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="team_size" Type="Int32" />
+    <Property Name="members_name" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="days_to_complete" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="type" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="platform" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="link" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="and_question_tbl">
+    <Key>
+      <PropertyRef Name="pk_que_id" />
+    </Key>
+    <Property Name="pk_que_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="que_title" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="que_desc" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="que_img" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="fk_email_id" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="fk_grp_id" Type="Int32" />
+    <Property Name="que_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="and_testimonials_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_email_id" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="desc" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="photo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="and_user_tbl">
+    <Key>
+      <PropertyRef Name="pk_email_id" />
+    </Key>
+    <Property Name="pk_email_id" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="fname" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="lname" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="address" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="gender" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="phone_no" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="semester" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="photo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>

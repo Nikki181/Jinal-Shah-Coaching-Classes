@@ -1,0 +1,54 @@
+﻿@model jinalshah_coaching_class.Areas.Admin.Models.blog_admin
+
+@{
+    ViewBag.Title = "edit_blog_admin";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+@section Scripts{
+     @Scripts.Render("bundles/jquery")
+    @Scripts.Render("bundles/jqueryval")
+}
+
+
+@using (Html.BeginForm("blog_edit", "Admin_blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Blog Edit</legend>
+
+       
+        <div class="editor-label">
+            @Html.Label("Blog Description")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.blog_desc)
+            @Html.ValidationMessageFor(model => model.blog_desc)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Subject")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.subject)
+            @Html.ValidationMessageFor(model => model.subject)
+        </div>
+
+        
+         
+        
+        <div class="editor-field">
+            <label for="name">Image</label>
+            <input  type="file" name="fileuploadDemo"  id="fileupld" class="form-control input-sm" />
+        </div>
+
+
+       
+        <p>
+            <input type="submit" value="Edit" />
+        </p>
+    </fieldset>
+}
+
+

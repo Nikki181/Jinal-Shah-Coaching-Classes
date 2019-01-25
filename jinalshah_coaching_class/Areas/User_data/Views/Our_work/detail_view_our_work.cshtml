@@ -1,0 +1,64 @@
+﻿@model IEnumerable<jinalshah_coaching_class.Areas.User_data.Models.our_work>
+@{
+    ViewBag.Title = "detail_view_our_work";
+    Layout = "~/Areas/User_data/Views/Shared/_master1.cshtml";
+}
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>     
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="~/assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="~/assets/plugins/flexslider/flexslider.css">
+    <link rel="stylesheet" href="~/assets/plugins/pretty-photo/css/prettyPhoto.css">    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="~/assets/css/styles.css">
+      <!-- Javascript -->          
+    <script type="text/javascript" src="~/assets/plugins/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="~/assets/plugins/bootstrap-hover-dropdown.min.js"></script> 
+    <script type="text/javascript" src="~/assets/plugins/back-to-top.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/pretty-photo/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jflickrfeed/jflickrfeed.min.js"></script> 
+    <script type="text/javascript" src="~/assets/js/main.js"></script>    
+  <header class="page-heading clearfix">
+
+    <h1 class="heading-title pull-left">
+                Our Work Detail
+    </h1>
+</header>
+    @foreach(var item in Model){
+   <div class="jobs-wrapper col-md-8 col-sm-7">           
+                            <h3 class="title">@item.project_name</h3>
+                            <div class="box box-border page-row">
+                                <a href="@Url.Content(item.our_work_image)"><img class="img-responsive" src="@Url.Content(item.our_work_image)" alt="" /></a>
+                                <br />
+                                <ul class="list-unstyled">
+                                    <li><strong>Type:</strong>@item.type</li>
+                                    <li><strong>Platform:</strong>@item.platform</li>
+                                    <li><strong>Team Size:</strong> @item.team_size</li> 
+                                     <li><strong>Members:</strong> @item.members_name</li>
+                                     <li><strong>Days To Complete:</strong>@item.days_to_complete</li>                                
+                                   <li><strong>Application Download:</strong> <a href="@item.link" target="_blank"><i class="fa fa-download"></i>Download</a></li>
+                                </ul>                                
+                            </div>
+                            <p>@item.project_desc</p>
+                           
+@*                            <ul>
+                                <li>Aenean sagittis enim elit</li>
+                                <li>Cum sociis natoque penatibus</li>
+                                <li>Proin sit amet nunc lobortis</li>
+                                <li>Maecenas sagittis nibh</li> 
+                                <li>Nam porta lobortis elit vel pharetr</li>    
+                                <li>Sed libero ligul</li>                              
+                            </ul>
+                            <p class="page-row">Ut suscipit vel nulla ut tincidunt. Nam porta lobortis elit vel pharetra. Aenean sagittis enim elit, et sagittis nunc luctus imperdiet. Maecenas vitae dolor a urna consequat vestibulum. Morbi ullamcorper condimentum neque non consequat. Cras varius nisl varius est imperdiet elementum. Donec sagittis vestibulum auctor. Sed eleifend auctor libero, in convallis nisi. Sed hendrerit ante et sem pharetra scelerisque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin sit amet nunc lobortis, convallis justo at, porta enim. Maecenas sagittis nibh vel sem molestie, ac dignissim lectus volutpat. Mauris mauris nisi, tincidunt nec quam feugiat, lobortis fermentum enim.</p>
+                              
+                            <h4 class="text-highlight">How to apply</h4>  
+                            <p>parturient montes, nascetur ridiculus mus. Proin sit amet nunc lobortis, convallis justo at, porta enim. Maecenas sagittis nibh vel sem molestie, ac dignissim lectus volutpat. Mauris mauris nisi, tincidunt nec quam feugiat, lobortis fermentum enim. <a href="#">Jobs@website.com</a></p> *@
+                                                                                        
+                        </div><!--//jobs-wrapper-->
+    }

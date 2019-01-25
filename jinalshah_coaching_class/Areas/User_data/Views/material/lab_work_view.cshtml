@@ -1,0 +1,77 @@
+﻿@model PagedList.IPagedList<jinalshah_coaching_class.Areas.User_data.Models.material>
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "lab_work_view";
+    Layout = "~/Areas/User_data/Views/Shared/_master1.cshtml";
+}
+
+
+
+<link rel="shortcut icon" href="~/favicon.ico">
+<link href='~/http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+<!-- Global CSS -->
+<link rel="stylesheet" href="~/assets/plugins/bootstrap/css/bootstrap.min.css">
+<!-- Plugins CSS -->
+<link rel="stylesheet" href="~/assets/plugins/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" href="~/assets/plugins/flexslider/flexslider.css">
+<link rel="stylesheet" href="~/assets/plugins/pretty-photo/css/prettyPhoto.css">
+<!-- Theme CSS -->
+<link id="theme-style" rel="stylesheet" href="~/assets/css/styles.css">
+<!-- Javascript -->
+<script type="text/javascript" src="~/assets/plugins/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="~/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="~/assets/plugins/bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="~/assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="~/assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
+<script type="text/javascript" src="~/assets/plugins/pretty-photo/js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="~/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="~/assets/plugins/jflickrfeed/jflickrfeed.min.js"></script>
+<script type="text/javascript" src="~/assets/js/main.js"></script>
+<header class="page-heading clearfix">
+                    <h1 class="heading-title pull-left">My Lab Work</h1>
+                   
+         </header>  
+<span>@ViewBag.message</span>  
+@foreach (var item in Model)
+ {
+@*<div class="col-md-6 col-sm-6"> *@  
+    <div class="col-md-3 col-sm-6">        
+    <div class="panel panel-theme">
+   
+       <div class="panel-heading">
+            <h3 class="panel-title">@item.material_name</h3>
+
+        </div>
+        @{
+    DateTime dt = Convert.ToDateTime(item.material_date);
+    string s = dt.ToShortDateString();
+            }
+          <ul class="list-group">
+            <li class="list-group-item"><i><strong style="color:#1c659b">Type:</strong></i> @item.type_of_material</li>
+      
+            <li class="list-group-item"><i><strong style="color:#1c659b">Posted On:</strong></i> @s</li>
+           
+        </ul>
+       <div class="controls text-right">
+         <a  href="@Url.Action("DownloadData","material",new { id = item.pk_material_id })"><i class="fa fa-download"></i> Download  </a>
+           <br/>
+          <a href="@Url.Action("delete","material",new{id=@item.pk_material_id})" ><i  class="fa fa-trash-o fa-lg"></i> Remove </a>
+     </div>
+        <br />                
+</div>
+ </div>    
+ }     
+    <br />
+    <br />
+    <br />
+    <br />
+
+<div>
+                     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                     @Html.PagedListPager(Model, Page_No => Url.Action("lab_work_view",
+                    new { Page_No }))
+
+</div>

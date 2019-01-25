@@ -1,0 +1,66 @@
+﻿@model IEnumerable<jinalshah_coaching_class.Areas.Admin.Models.album_admin>
+
+@{
+    ViewBag.Title = "view_album_admin";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+
+ <link rel="shortcut icon" href="~/favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>     
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="~/assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="~/assets/plugins/flexslider/flexslider.css">
+    <link rel="stylesheet" href="~/assets/plugins/pretty-photo/css/prettyPhoto.css">  
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="~/assets/css/styles.css">
+
+<script type="text/javascript" src="~/assets/plugins/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="~/assets/plugins/bootstrap-hover-dropdown.min.js"></script> 
+    <script type="text/javascript" src="~/assets/plugins/back-to-top.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/pretty-photo/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jflickrfeed/jflickrfeed.min.js"></script> 
+    <script type="text/javascript" src="~/assets/js/main.js"></script>  
+<style type="text/css">
+       @@media only screen and (min-width:320px) and (max-width:480px) {
+         #res{
+            width:280px;
+            }
+        }
+       #res2 {
+           margin-left:20px;
+       }
+     </style>
+<header class="page-heading clearfix">
+
+    <h1 class="heading-title pull-left">
+                Albums
+    </h1>
+</header>
+<div> 
+                            <div id="res" class="row">
+                                  @foreach (var item in Model)
+                                  { 
+                                      //"col-md-4 col-sm-3 col-xs-9" 
+                                      <div class="col-md-3 col-sm-6"> 
+                                    
+		                                <a  href="@Url.Action("view_gallary", "Admin_gallery", new { id =item.pk_album_id})">
+                                      <img class="img-responsive img-thumbnail" src="~/assets/images/gallery/gallery-thumb-1.jpg" alt="" />       
+                                            
+                                            <h4 id="res2">@item.album_name</h4>
+		                                </a>
+                                     
+                                          <i style="color:#6091BA" class="fa fa-trash-o fa-lg">@Html.ActionLink(" Delete", "Delete", new {id=item.pk_album_id})</i>
+
+                                      </div>
+                                      
+                                  }
+                                
+                            </div>
+ </div><!--//album-wrapper-->

@@ -1,0 +1,184 @@
+﻿@model jinalshah_coaching_class.Models.user_visitor
+@{
+    ViewBag.Title = "sign_up";
+    Layout = "~/Views/Shared/_login1_master.cshtml";
+}
+
+@section Scripts{
+     @Scripts.Render("bundles/jquery")
+    @Scripts.Render("bundles/jqueryval")
+}
+
+
+
+   <!-- Bootstrap core CSS -->
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Font Awesome -->
+	<link href="~/css/font-awesome.min.css" rel="stylesheet">
+	
+	<!-- Endless -->
+	@*<link href="~/css/endless.min.css" rel="stylesheet">*@
+           <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <!-- Jquery -->
+	<script src="~/js/jquery-1.10.2.min.js"></script>
+    
+    <!--Bootstrap-->
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+   
+	<!-- Modernizr -->
+	<script src='~/js/modernizr.min.js'></script>
+	
+	<!-- Pace -->
+	<script src='~/js/pace.min.js'></script>
+	
+	<!-- Popup Overlay -->
+	<script src='~/js/jquery.popupoverlay.min.js'></script>
+	
+	<!-- Slimscroll -->
+	<script src='~/js/jquery.slimscroll.min.js'></script>
+	
+	<!--Cookie-->
+	<script src='~/js/jquery.cookie.min.js'></script>
+
+	<!--Endless-->
+	<script src="~/js/endless/endless.js"></script>
+ 
+ <link rel="shortcut icon" href="~/favicon.ico">  
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>     
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="~/assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="~/assets/plugins/flexslider/flexslider.css">
+    <link rel="stylesheet" href="~/assets/plugins/pretty-photo/css/prettyPhoto.css">     
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="~/assets/css/styles.css">
+   
+<!-- Javascript -->          
+    <script type="text/javascript" src="~/assets/plugins/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="~/assets/plugins/bootstrap-hover-dropdown.min.js"></script> 
+    <script type="text/javascript" src="~/assets/plugins/back-to-top.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery-placeholder/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/pretty-photo/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jflickrfeed/jflickrfeed.min.js"></script> 
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="~/assets/plugins/gmaps/gmaps.js"></script>   
+    <script type="text/javascript" src="~/assets/js/map.js"></script> 
+    <script type="text/javascript" src="~/assets/js/main.js"></script>         
+
+
+
+   
+
+@using (Html.BeginForm("insert_user", "Visitor_user", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <form name="form1" id="form1">
+                            <span style="color:red">@ViewBag.msg </span>
+                               
+                                <div class="form-group">
+                                    <label for="name">First Name</label>
+                                    <input id="name" name="txtfnm" type="text" class="form-control input-sm" required placeholder="Enter your First name">
+                                </div><!--//form-group-->
+
+                                <div class="form-group">
+                                    <label for="name">Last Name</label>
+                                    <input  name="txtlnm" type="text" class="form-control input-sm" placeholder="Enter your Last name">
+                                </div><!--//form-group-->
+
+                               <div class="form-group">
+							    <label for="email">Email Address<span class="required"></span></label>
+							        <input name="txteid" type="email" required placeholder="Email address" class="form-control input-sm">
+						        </div><!-- /form-group -->
+
+                                 <div class="form-group">
+                                <label for="pwd">Password</label>
+						        	<input name="txtpwd" type="password" required placeholder="Password" class="form-control input-sm">
+						        </div><!-- /form-group -->
+						
+                               
+                    
+                              <div class="form-group">
+							    <label for="add">Address</label>
+							    @*<input name="txtadd"  type="text" placeholder="Address" class="form-control input-sm" >*@
+                                  <textarea id="que_desc" name="news_desc" required placeholder="Address" class="form-control input-sm" rows="5"></textarea>
+						      </div><!-- /form-group -->
+						
+                                 <div class="form-group">
+							        <label for="gender">Gender</label><br />
+							         <input name="txtgen"  type="radio" checked="checked">Male
+                                     &nbsp;&nbsp;&nbsp;<input name="txtgen"  type="radio">Female
+						        </div><!-- /form-group -->
+                       
+                                 
+                        
+                              
+
+                   <!-- /form-group -->
+                      
+
+                             <div class="form-group">
+							<label for="sem">Degree</label>
+                                 <select name="sem" class="form-control input-sm" >
+										<option>BCA</option>
+                                        <option>MCA</option>
+										<option>BE</option>
+										<option>BTech</option>
+                                        <option>MTech</option>
+                                 	    <option>ME</option>
+                                        <option>Computer Engineer</option>
+										<option>BCSIT</option>
+										<option>MSCIT</option>
+                                        
+                                     
+                             </select>
+							
+				    		</div>
+                            <div class="form-group">
+							<label for="sem">Semester</label>
+                             <select name="sem" class="form-control input-sm" >
+										<option>1st semester</option>
+                                        <option>2</option>
+										<option>3</option>
+										<option>4</option>
+                                        <option>5</option>
+                                 	    <option>6</option>
+                                        <option>7</option>
+										<option>8</option>
+										<option>9</option>
+                                        <option>10</option>
+                                     
+                             </select>
+							
+				    		</div><!-- /form-group -->
+
+                          <div class="form-group" >
+                            
+							<label for="pic">Photo</label>
+                            <input  type="file" name="fileuploadDemo"  id="fileupld" class="form-control input-sm" />
+                            
+					      </div>
+
+                                <br/>
+
+						      <div class="controls text-left">
+                                     <h3><i class="fa fa-plus-circle" style="color:#6091ba">
+                                         <input type="submit" id="sub" class="btn btn-theme" value="Sign Up" />
+                                       
+                                        </i></h3>
+                        
+							    </div>
+
+    </form> 
+    
+}    
+
+    	

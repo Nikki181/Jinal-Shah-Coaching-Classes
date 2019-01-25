@@ -1,0 +1,41 @@
+﻿@model jinalshah_coaching_class.Models.material_visitor
+
+@{
+    ViewBag.Title = "all_subjects_visitor";
+    Layout = "~/Views/Shared/_master1_visitor.cshtml";
+}
+
+<header class="page-heading clearfix">
+      <h1 class="heading-title pull-left">All Subjects</h1>
+</header>  
+
+  <div class="col-md-3 col-sm-6">
+    <a href="@Url.Action("view_material_visitor", "Visitor_material",new {name="CG" })" style="font-size:15px">
+         <img class="img-responsive" height="150" width="150" src="~/images/aan_icon.png" alt="Photo of Subject"/>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.Label("CG")
+    </a>
+    </div>
+      <div class="col-md-3 col-sm-6">
+    <a href="@Url.Action("view_material_visitor","Visitor_material",new {name="SS" })" style="font-size:15px">
+         <img class="img-responsive"  height="150" width="150" src="~/images/aan_icon.png" alt="Photo of Subject"/>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.Label("SS")
+    </a>
+    </div>
+<div class="col-md-3 col-sm-6">
+    <a href="@Url.Action("view_material_visitor","Visitor_material",new {name="DFS" })" style="font-size:15px">
+         <img class="img-responsive"  height="150" width="150"  src="~/images/aan_icon.png" alt="Photo of Subject"/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.Label("DFS")
+    </a>
+    </div>
+<div class="col-md-3 col-sm-6">
+    <a href="@Url.Action("view_material_visitor","Visitor_material",new {name="DC"})" style="font-size:15px">
+          <img class="img-responsive"  height="150" width="150"  src="~/images/aan_icon.png" alt="Photo of Subject"/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.Label("DC")
+    </a>
+    </div>
+<div class="col-md-3 col-sm-6">
+    <a href="@Url.Action("view_material_visitor","Visitor_material",new {name="JAVA"})" style="font-size:15px">
+          <img class="img-responsive"  height="150" width="150"  src="~/images/aan_icon.png" alt="Photo of Subject"/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.Label("JAVA")
+    </a>
+    </div>

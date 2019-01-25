@@ -1,0 +1,146 @@
+﻿@model jinalshah_coaching_class.Areas.User_data.Models.material
+@{
+    ViewBag.Title = "lab_work_upload";
+    Layout = "~/Areas/User_data/Views/Shared/_master1.cshtml";
+}
+
+@section Scripts{
+ 
+     @Scripts.Render("bundles/jquery")
+    @Scripts.Render("bundles/jqueryval")
+}
+
+<link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="~/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Pace -->
+<link href="~/css/pace.css" rel="stylesheet">
+
+<!-- Chosen -->
+<link href="~/css/chosen/chosen.min.css" rel="stylesheet" />
+
+<!-- Datepicker -->
+<link href="~/css/datepicker.css" rel="stylesheet" />
+
+<!-- Timepicker -->
+<link href="~/css/bootstrap-timepicker.css" rel="stylesheet" />
+
+<!-- Slider -->
+<link href="~/css/slider.css" rel="stylesheet" />
+
+<!-- Tag input -->
+<link href="~/css/jquery.tagsinput.css" rel="stylesheet" />
+
+<!-- WYSIHTML5 -->
+<link href="~/css/bootstrap-wysihtml5.css" rel="stylesheet" />
+
+<!-- Dropzone -->
+<link href='~/css/dropzone/dropzone.css' rel="stylesheet" />
+
+<!-- Endless -->
+@*<link href="~/css/endless.min.css" rel="stylesheet">*@
+<link href="~/css/endless-skin.css" rel="stylesheet">
+<!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<!-- Jquery -->
+<script src="~/js/jquery-1.10.2.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Chosen -->
+<script src='~/js/chosen.jquery.min.js'></script>
+
+<!-- Mask-input -->
+<script src='~/js/jquery.maskedinput.min.js'></script>
+
+<!-- Datepicker -->
+<script src='~/js/bootstrap-datepicker.min.js'></script>
+
+<!-- Timepicker -->
+<script src='~/js/bootstrap-timepicker.min.js'></script>
+
+<!-- Slider -->
+<script src='~/js/bootstrap-slider.min.js'></script>
+
+<!-- Tag input -->
+<script src='~/js/jquery.tagsinput.min.js'></script>
+
+<!-- WYSIHTML5 -->
+<script src='~/js/wysihtml5-0.3.0.min.js'></script>
+<script src='~/js/uncompressed/bootstrap-wysihtml5.js'></script>
+
+<!-- Dropzone -->
+<script src='~/js/dropzone.min.js'></script>
+
+<!-- Modernizr -->
+<script src='~/js/modernizr.min.js'></script>
+
+<!-- Pace -->
+<script src='~/js/pace.min.js'></script>
+
+<!-- Popup Overlay -->
+<script src='~/js/jquery.popupoverlay.min.js'></script>
+
+<!-- Slimscroll -->
+<script src='~/js/jquery.slimscroll.min.js'></script>
+
+<!-- Cookie -->
+<script src='~/js/jquery.cookie.min.js'></script>
+
+<!-- Endless -->
+<script src="~/js/endless/endless_form.js"></script>
+
+
+@using (Html.BeginForm("insert_material", "material", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    
+
+                                
+                                <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title"><i>Upload Your Work</i></h4>
+                                        </div>
+                                        <div class="panel-body">
+                     <div class="form-group">
+                                    <label for="name">Tag Subject</label>
+                                    <input type="text" id="txtsub1" name="txtsub1"  class="tag-demo1" value="C,C++">
+                                </div><!--//form-group-->          
+						
+                                <span  style="color:red">@ViewBag.msg</span>
+
+                                 <div class="form-group">
+                                    <label for="name">Upload Here</label>
+                                   <input  type="file" name="fileuploadDemo" required id="fileupld" class="form-control input-sm" />
+                                </div><!--//form-group-->
+
+                                <span id="spn" style="color:red"></span>
+
+                                <hr />
+                                 <div class="controls text-left">
+                                       <h3><i class="fa fa-upload " style="color:#6091ba">
+                                         <input type="submit" value="Upload" id="sub" class="btn btn-theme"  name="submit" />
+                                        </i></h3>
+                                </div>
+    </div>
+                                    </div>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#sub").click(function () {
+           
+            if ($("#fileupld").val() == "") {
+                $("#spn").html("Please Upload Your Work");
+            }
+
+            return false;
+        });
+     
+});
+</script>

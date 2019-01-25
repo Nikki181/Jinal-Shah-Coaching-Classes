@@ -1,0 +1,31 @@
+﻿@model jinalshah_coaching_class.Areas.User_data.Models.news
+
+@{
+    ViewBag.Title = "news_view";
+    Layout = "~/Areas/User_data/Views/Shared/_master1.cshtml";
+}
+<header class="page-heading clearfix">
+                    <h1 class="heading-title pull-left"> News View</h1>
+                   
+         </header>  
+@{
+    DateTime dt = Convert.ToDateTime(Model.news_date);
+    string str = dt.ToShortDateString();
+    
+    }
+
+
+      
+                              
+                            <article class="news-item"><p class="title" style="color:#6091BA">@Html.DisplayFor(model => model.news_title)</p>
+                                <p class="meta text-muted">By: Admin | Posted on: @str </p>
+                                <p class="featured-image"><img class="img-responsive" src="@Url.Content(@Model.news_image)" alt=""></p>
+                             
+        
+       <p> @Html.DisplayFor(model => model.news_desc)</p>
+        
+                         
+                            </article><!--//news-item-->
+                        
+        
+

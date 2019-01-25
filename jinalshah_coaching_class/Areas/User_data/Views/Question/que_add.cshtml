@@ -1,0 +1,154 @@
+﻿@model jinalshah_coaching_class.Areas.User_data.Models.question
+
+@{
+    ViewBag.Title = "que_add";
+    Layout = "~/Areas/User_data/Views/Shared/_masterQ&A.cshtml";
+}
+
+@section Scripts{
+ 
+     @Scripts.Render("bundles/jquery")
+    @Scripts.Render("bundles/jqueryval")
+}
+
+<link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="~/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Pace -->
+<link href="~/css/pace.css" rel="stylesheet">
+
+<!-- Chosen -->
+<link href="~/css/chosen/chosen.min.css" rel="stylesheet" />
+
+<!-- Datepicker -->
+<link href="~/css/datepicker.css" rel="stylesheet" />
+
+<!-- Timepicker -->
+<link href="~/css/bootstrap-timepicker.css" rel="stylesheet" />
+
+<!-- Slider -->
+<link href="~/css/slider.css" rel="stylesheet" />
+
+<!-- Tag input -->
+<link href="~/css/jquery.tagsinput.css" rel="stylesheet" />
+
+<!-- WYSIHTML5 -->
+<link href="~/css/bootstrap-wysihtml5.css" rel="stylesheet" />
+
+<!-- Dropzone -->
+<link href='~/css/dropzone/dropzone.css' rel="stylesheet" />
+
+<!-- Endless -->
+@*<link href="~/css/endless.min.css" rel="stylesheet">*@
+<link href="~/css/endless-skin.css" rel="stylesheet">
+<!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<!-- Jquery -->
+<script src="~/js/jquery-1.10.2.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Chosen -->
+<script src='~/js/chosen.jquery.min.js'></script>
+
+<!-- Mask-input -->
+<script src='~/js/jquery.maskedinput.min.js'></script>
+
+<!-- Datepicker -->
+<script src='~/js/bootstrap-datepicker.min.js'></script>
+
+<!-- Timepicker -->
+<script src='~/js/bootstrap-timepicker.min.js'></script>
+
+<!-- Slider -->
+<script src='~/js/bootstrap-slider.min.js'></script>
+
+<!-- Tag input -->
+<script src='~/js/jquery.tagsinput.min.js'></script>
+
+<!-- WYSIHTML5 -->
+<script src='~/js/wysihtml5-0.3.0.min.js'></script>
+<script src='~/js/uncompressed/bootstrap-wysihtml5.js'></script>
+
+<!-- Dropzone -->
+<script src='~/js/dropzone.min.js'></script>
+
+<!-- Modernizr -->
+<script src='~/js/modernizr.min.js'></script>
+
+<!-- Pace -->
+<script src='~/js/pace.min.js'></script>
+
+<!-- Popup Overlay -->
+<script src='~/js/jquery.popupoverlay.min.js'></script>
+
+<!-- Slimscroll -->
+<script src='~/js/jquery.slimscroll.min.js'></script>
+
+<!-- Cookie -->
+<script src='~/js/jquery.cookie.min.js'></script>
+
+<!-- Endless -->
+<script src="~/js/endless/endless_form.js"></script>
+
+
+@using (Html.BeginForm("insert_que", "Question", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    
+                                 <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title"><i>Add Question</i></h4>
+                                        </div>
+                            <div class="panel-body">
+                                    <div class="form-group">
+                                    <label for="name">Tag Subject</label>
+                                    <input type="text" id="txtsub" name="txtsub" required class="tag-demo1" value="C,C++">
+                                </div><!--//form-group-->
+                                <span  style="color:red">@ViewBag.subject</span>
+
+                                <form id="formToggleLine" class="form-horizontal no-margin form-border">
+                                  <div class="form-group">
+                                	<div class="col-lg-10">
+									<textarea id="wysihtml5-textarea" name="que_desc"   placeholder="Enter your Question ..." class="form-control" rows="6"></textarea>
+                                        <span id="spn" style="color:red">@ViewBag.msg</span>
+								</div><!-- /.col -->
+                                     </div>
+                                </form> 
+                                <br /><br /><br /><br /><br /><br /><br /><br /><br />
+                                    
+                                     <div class="form-group">
+                                    <label for="name">Image</label>
+                                   <input  type="file" name="fileuploadDemo"  id="fileupld" class="form-control input-sm" />
+                                </div><!--//form-group-->
+                                <div class="form-group">
+                                      <h3><i class="fa fa-upload " style="color:#6091ba">
+                                         <input type="submit" value="Post" id="sub" class="btn btn-theme"  name="submit" />
+                                        </i></h3>
+                                </div>
+                                                                                    
+                            </div>
+                                </div>     
+      
+   }
+
+
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $("#sub").click(function () {
+           
+            if ($("#wysihtml5-textarea").val() == "") {
+                $("#spn").html("Please Add Description");
+            }
+
+            return false;
+        });
+     
+});
+</script>*@
+

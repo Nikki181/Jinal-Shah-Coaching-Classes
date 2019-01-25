@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Forget_pwd";
+    Layout = "~/Views/Shared/_login1_master.cshtml";
+}
+
+@section Scripts{
+     @Scripts.Render("bundles/jquery")
+    @Scripts.Render("bundles/jqueryval")
+}
+
+
+
+
+@using (Html.BeginForm("password_forget", "Visitor_user", FormMethod.Post))
+{
+
+
+<div class="login-wrapper">
+		
+		<div class="login-widget animation-delay1">	
+			<div class="panel panel-default">
+				<div class="panel-heading clearfix">
+					<div class="pull-left">
+						<i class="fa fa-lock fa-lg"></i> Forgot Password
+					</div>
+
+				</div>
+				<div class="panel-body">
+					<form class="form-login">
+						<div class="form-group">
+							<label>Email-id</label>
+							<input type="email" required placeholder="Email" name="email" class="form-control input-sm bounceIn animation-delay2" >
+                          &nbsp; &nbsp; &nbsp;&nbsp;<span style="color:red" id="spnmsg">@ViewBag.message</span>
+						</div>
+						<hr/>
+                           <div class="controls text-right">
+                                
+                                <button type="submit" class="btn btn-theme">Submit</button>
+                               
+                        
+                        </div>
+					</form>
+				</div>
+			</div><!-- /panel -->
+		</div><!-- /login-widget -->
+	</div><!-- /login-wrapper -->
+
+}

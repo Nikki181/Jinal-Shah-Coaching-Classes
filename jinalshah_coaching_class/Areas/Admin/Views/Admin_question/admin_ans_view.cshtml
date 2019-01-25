@@ -1,0 +1,233 @@
+﻿@model jinalshah_coaching_class.Areas.Admin.Models.question_admin
+
+@{
+    ViewBag.Title = "admin_ans_view";
+    Layout = "~/Areas/Admin/Views/Shared/_admin1_master.cshtml";
+}
+
+
+
+
+@section Scripts{
+
+   @*<link href="~/css/endless.min.css" rel="stylesheet">*@
+	<link href="~/css/endless-skin.css" rel="stylesheet">
+	<!-- Color box -->
+	<link href="~/css/colorbox/colorbox.css" rel="stylesheet">
+
+	<!-- Endless -->
+	
+    <!-- Colorbox -->
+	<script src='~/js/jquery.colorbox.min.js'></script>	
+	
+    <!-- Endless -->
+	<script src="~/js/endless/endless.js"></script>
+	<script>
+	    $(function () {
+	        //Colorbox 
+	        $('.image-zoom').colorbox({
+	            maxWidth: '90%',
+	            width: '800px'
+	        });
+	    });
+	</script>	
+}
+
+<div id="wrapper" class="preload">
+		<div id="main-container">
+			<div class="padding-md">
+				<div class="row">
+					<div class="col-md-11">	
+						
+						<div class="row">	
+							<div>
+								<div class="panel blog-container">
+									@*<div class="panel-body">*@
+										
+                                        <h3 class="headline m-top-md">
+							                Welcome To Our question
+							                <span class="line"></span>
+					                	</h3>   
+                           
+										<small class="text-muted">By <a href="#"><strong>@ViewBag.fname</strong></a> | @Model.que_date | @ViewBag.count  Answer</small>
+                                    <br /><br />
+										<div class="image-wrapper">
+											<a class="image-wrapper image-zoom"  href="@Url.Content(Model.que_img)">
+												<img src="@Url.Content(Model.que_img)" class="img-responsive" alt="Photo of Blog">
+												<div class="image-overlay"></div>	
+											</a>
+										</div><!-- /image-wrapper -->
+                                        <br />
+                                        <br />
+                                             <div class="form-group">
+                                                 <label for="name">Question:</label>&nbsp;&nbsp;&nbsp;
+                                                      @Model.que_title
+                                             </div><!--//form-group-->
+                                            
+								
+                                        <div class="form-group">
+                                                 <label for="name">Description:</label>&nbsp;&nbsp;&nbsp;
+                                               @Model.que_desc
+                                             </div><!--//form-group-->
+									@*</div>*@
+								</div><!-- /panel -->
+								
+                               @{
+                                   List<jinalshah_coaching_class.Areas.Admin.Models.question_admin> str = new List<jinalshah_coaching_class.Areas.Admin.Models.question_admin>();
+                                   str = ViewBag.answer;
+                               }
+                               
+                                
+								<h4 class="headline">
+									Answer (@str.Count)
+									<span class="line"></span>
+								</h4>
+
+                               
+                                 @foreach(var item in str)
+                                {
+								<ul class="media-list comment-list">
+									<li class="media">
+										<a class="pull-left" href="#">
+											<img class="media-object img-circle" src="@Url.Content(ViewBag.photo)" alt="User Avatar" style="width: 40px; height: 40px;">
+										</a>
+										<div class="media-body">
+											<div class="media-heading">
+												<a href="#">@ViewBag.fname</a>
+												<small class="text-muted">
+													@item.a_date 
+												</small>
+											</div>
+											<p>@item.answer</p>
+											
+											<!-- Nested media object -->
+											
+										</div>
+									</li>
+                                </ul><!-- /media-list -->	
+                                }			
+                              
+
+                                @using (Html.BeginForm("add_answer", "Admin_question", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                 @Html.ValidationSummary(true)
+    
+                                 <div class="form-group">
+                                    <label for="name">Post your Answer Here</label>
+                                     <br /><br />
+                                    <textarea class="form-control input-sm" rows="10" name="answer" placeholder="Enter your text ..."></textarea>
+                                </div><!--//form-group-->
+                                
+                                <div class="form-group">
+                                    <label for="name">Image</label>
+                                   <input  type="file" name="fileuploadDemo"  id="fileupld" class="form-control input-sm" />
+                                </div><!--//form-group-->
+     
+                               
+                                 <div class="form-group-center">
+                                         <input type="submit" value="Post Question" class="btn btn-success btn-sm bounceIn animation-delay7 login-link"  name="submit" />
+                                </div>
+    
+}
+							</div><!-- /.col -->
+							
+						</div><!-- /.row -->
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.padding-md -->
+		</div><!-- /main-container -->
+	</div>
+
+  
+
+@*@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>question_admin</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pk_ans_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pk_ans_id)
+            @Html.ValidationMessageFor(model => model.pk_ans_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fk_que_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fk_que_id)
+            @Html.ValidationMessageFor(model => model.fk_que_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.answer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.answer)
+            @Html.ValidationMessageFor(model => model.answer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ans_img)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ans_img)
+            @Html.ValidationMessageFor(model => model.ans_img)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fk_email_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fk_email_id)
+            @Html.ValidationMessageFor(model => model.fk_email_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.a_date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.a_date)
+            @Html.ValidationMessageFor(model => model.a_date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.que_title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.que_title)
+            @Html.ValidationMessageFor(model => model.que_title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.que_desc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.que_desc)
+            @Html.ValidationMessageFor(model => model.que_desc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fname)
+            @Html.ValidationMessageFor(model => model.fname)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

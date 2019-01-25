@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="and_album_tbl" EntityType="Database1Model.Store.and_album_tbl" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="and_answer_tbl" EntityType="Database1Model.Store.and_answer_tbl" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="and_blog_tbl" EntityType="Database1Model.Store.and_blog_tbl" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="and_comment_tbl" EntityType="Database1Model.Store.and_comment_tbl" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="and_event_tbl" EntityType="Database1Model.Store.and_event_tbl" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="and_faq_tbl" EntityType="Database1Model.Store.and_faq_tbl" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="and_gallery_tbl" EntityType="Database1Model.Store.and_gallery_tbl" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="and_material_tbl" EntityType="Database1Model.Store.and_material_tbl" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="and_news_tbl" EntityType="Database1Model.Store.and_news_tbl" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="and_our_work_tbl" EntityType="Database1Model.Store.and_our_work_tbl" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="and_question_tbl" EntityType="Database1Model.Store.and_question_tbl" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="and_testimonials_tbl" EntityType="Database1Model.Store.and_testimonials_tbl" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="and_user_tbl" EntityType="Database1Model.Store.and_user_tbl" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="and_album_tbl">
+    <Key>
+      <PropertyRef Name="pk_album_id" />
+    </Key>
+    <Property Name="pk_album_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="album_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="and_answer_tbl">
+    <Key>
+      <PropertyRef Name="pk_ans_id" />
+    </Key>
+    <Property Name="pk_ans_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fk_que_id" Type="int" Nullable="false" />
+    <Property Name="answer" Type="varchar(max)" Nullable="false" />
+    <Property Name="ans_img" Type="varchar(max)" />
+    <Property Name="fk_email_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="a_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="and_blog_tbl">
+    <Key>
+      <PropertyRef Name="pk_blog_id" />
+    </Key>
+    <Property Name="pk_blog_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="blog_desc" Type="varchar(max)" Nullable="false" />
+    <Property Name="subject" Type="varchar(max)" Nullable="false" />
+    <Property Name="fk_email_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="blog_image" Type="varchar(max)" />
+    <Property Name="blog_date " Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="and_comment_tbl">
+    <Key>
+      <PropertyRef Name="pk_comment_id" />
+    </Key>
+    <Property Name="pk_comment_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fk_blog_id" Type="int" Nullable="false" />
+    <Property Name="fk_email_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="comment" Type="varchar(max)" Nullable="false" />
+    <Property Name="cmt_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="and_event_tbl">
+    <Key>
+      <PropertyRef Name="pk_event_id" />
+    </Key>
+    <Property Name="pk_event_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="event_name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="event_desc" Type="varchar(max)" />
+    <Property Name="speaker" Type="varchar" MaxLength="50" />
+    <Property Name="topic" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="event_img" Type="varchar(max)" />
+    <Property Name="event_date " Type="date" Nullable="false" />
+    <Property Name="event_time" Type="time" Nullable="false" />
+    <Property Name="event_place" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="and_faq_tbl">
+    <Key>
+      <PropertyRef Name="pk_faq_id" />
+    </Key>
+    <Property Name="pk_faq_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="que" Type="varchar(max)" Nullable="false" />
+    <Property Name="ans" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="and_gallery_tbl">
+    <Key>
+      <PropertyRef Name="pk_gallery_id" />
+    </Key>
+    <Property Name="pk_gallery_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="gallery_image" Type="varchar(max)" Nullable="false" />
+    <Property Name="fk_album_id" Type="int" Nullable="false" />
+    <Property Name="gallery_caption" Type="varchar" MaxLength="100" />
+    <Property Name="location" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="and_material_tbl">
+    <Key>
+      <PropertyRef Name="pk_material_id" />
+    </Key>
+    <Property Name="pk_material_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fk_email_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="material_name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="material_path" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="material_date" Type="datetime" />
+    <Property Name="type_of_material" Type="varchar" MaxLength="20" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="and_news_tbl">
+    <Key>
+      <PropertyRef Name="pk_news_id" />
+    </Key>
+    <Property Name="pk_news_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="news_title" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="news_desc" Type="varchar(max)" Nullable="false" />
+    <Property Name="news_image" Type="varchar(max)" />
+    <Property Name="news_date" Type="datetime" />
+    <Property Name="news_isactive" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="and_our_work_tbl">
+    <Key>
+      <PropertyRef Name="pk_our_work_id" />
+    </Key>
+    <Property Name="pk_our_work_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="our_work_image" Type="varchar(max)" Nullable="false" />
+    <Property Name="project_name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="project_desc" Type="varchar(max)" />
+    <Property Name="team_size" Type="int" />
+    <Property Name="members_name" Type="varchar" MaxLength="200" />
+    <Property Name="days_to_complete" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="platform" Type="varchar" MaxLength="50" />
+    <Property Name="link" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="and_question_tbl">
+    <Key>
+      <PropertyRef Name="pk_que_id" />
+    </Key>
+    <Property Name="pk_que_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="que_title" Type="varchar(max)" Nullable="false" />
+    <Property Name="que_desc" Type="varchar(max)" />
+    <Property Name="que_img" Type="varchar(max)" />
+    <Property Name="fk_email_id" Type="varchar" MaxLength="50" />
+    <Property Name="fk_grp_id" Type="int" />
+    <Property Name="que_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="and_testimonials_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fk_email_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="desc" Type="varchar(max)" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="photo" Type="varchar(max)" />
+    <Property Name="status" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="and_user_tbl">
+    <Key>
+      <PropertyRef Name="pk_email_id" />
+    </Key>
+    <Property Name="pk_email_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="fname" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="lname" Type="varchar" MaxLength="20" />
+    <Property Name="address" Type="varchar(max)" />
+    <Property Name="gender" Type="varchar" MaxLength="10" />
+    <Property Name="phone no" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="10" />
+    <Property Name="semester" Type="varchar" MaxLength="20" />
+    <Property Name="photo" Type="varchar(max)" />
+  </EntityType>
+</Schema>
